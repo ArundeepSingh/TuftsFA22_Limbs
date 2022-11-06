@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * movement_speed * Time.fixedDeltaTime);
         if (movement.x == 1) {
           this.gameObject.GetComponent<SpriteRenderer>().sprite = RightSprite;
-          Debug.Log("moving to right sprite");
         } else if (movement.x == -1) {
           this.gameObject.GetComponent<SpriteRenderer>().sprite = LeftSprite;
         } else {
