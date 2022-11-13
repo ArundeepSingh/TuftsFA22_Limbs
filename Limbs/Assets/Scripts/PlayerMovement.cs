@@ -5,40 +5,77 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Sprite LeftSprite;
-    public Sprite RightSprite;
-    public Sprite IdleSprite;
+    private SpriteRenderer spriteRenderer;
 
+    // Eyes Sprites
+    public Sprite LeftEyesSprite;
+    public Sprite RightEyesSprite;
+    public Sprite IdleEyesSprite;
+
+    // Head Sprites
+    public Sprite LeftHeadSprite;
+    public Sprite RightHeadSprite;
+    public Sprite IdleHeadSprite;
+
+    // Movement
+    Vector2 movement;
     public float movement_speed = 5;
     private float moveHorizontal;
     private float moveVertical;
-    Vector2 movement;
+
+    private PlayerStateDevelopment psd;
+
 
     // Start is called before the first frame update
     void Start()
     {
-      rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        psd = PlayerStateDevelopment.GetInstance()!;
     }
 
     // Update is called once per frame
     void Update()
     {
-      // Left = -1, No keypress = 0, Right = 1
-      movement.x = Input.GetAxisRaw("Horizontal");
-      movement.y = Input.GetAxisRaw("Vertical");
+        // Left = -1, No keypress = 0, Right = 1
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
       
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * movement_speed * Time.fixedDeltaTime);
-        if (movement.x == 1) {
-          this.gameObject.GetComponent<SpriteRenderer>().sprite = RightSprite;
-        } else if (movement.x == -1) {
-          this.gameObject.GetComponent<SpriteRenderer>().sprite = LeftSprite;
-        } else {
-          this.gameObject.GetComponent<SpriteRenderer>().sprite = IdleSprite;
+        PickSprite(movement.x);
+    }
+
+    public void OnTriggerEnter2D (Collider2D other){
+        if (other.gameObject.tag == "Eyes"){
+            psd.ProgressPlayerState();
         }
-        
+    }
+
+    void PickSprite(float direction)
+    {
+        switch (psd.currPlayerState) {
+            case PlayerStateDevelopment.PlayerState.Eyes:
+                if (direction == 1)
+                    spriteRenderer.sprite = RightEyesSprite;
+                else if (direction == -1)
+                    spriteRenderer.sprite = LeftEyesSprite;
+                else
+                    spriteRenderer.sprite = IdleEyesSprite;
+                break;
+            case PlayerStateDevelopment.PlayerState.Head:
+                if (direction == 1)
+                    spriteRenderer.sprite = RightHeadSprite;
+                else if (direction == -1)
+                    spriteRenderer.sprite = LeftHeadSprite;
+                else
+                    spriteRenderer.sprite = IdleHeadSprite;
+                break;
+            default:
+                break;
+        }
     }
 }
