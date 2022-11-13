@@ -43,8 +43,6 @@ public class PlayerStateDevelopment : MonoBehaviour
 
     public void ProgressPlayerState()
     {
-        Debug.Log("Progressing player state");
-        Debug.Log(currPlayerState);
         if (currPlayerState == PlayerState.Eyes){
             currPlayerState = PlayerState.Head;
         }
