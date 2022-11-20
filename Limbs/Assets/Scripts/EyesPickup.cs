@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class EyesPickup : MonoBehaviour
 {
+    private GameController gc;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // get the game controller object
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -21,7 +24,7 @@ public class EyesPickup : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
-            SceneManager.LoadScene("EyesScene");
+            gc.SwitchSceneAfterEyesPickup();
         }
     }
 }
