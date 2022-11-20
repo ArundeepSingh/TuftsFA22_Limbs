@@ -21,4 +21,9 @@ public class GameController : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene("StartScene");
     }
+
+    public void SwitchSceneAfterEyesPickup() {
+        SceneManager.LoadScene("EyesScene");
+    }
+
 }

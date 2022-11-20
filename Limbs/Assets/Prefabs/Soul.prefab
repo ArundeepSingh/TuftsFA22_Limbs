@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3412241283351201126}
   - component: {fileID: 3412241283351201048}
   - component: {fileID: 3412241283351201049}
-  - component: {fileID: 8947255594295587624}
+  - component: {fileID: 126122948887881560}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Player
@@ -234,7 +234,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &8947255594295587624
+--- !u!114 &126122948887881560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
