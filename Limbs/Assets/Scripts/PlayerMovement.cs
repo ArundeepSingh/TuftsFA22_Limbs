@@ -56,7 +56,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Before change: " + transform.position);
             transform.position = new Vector2(5.07f, 0);
             Debug.Log("After change: " + transform.position);
-            // SceneManager.LoadScene("EyesScene");
+            UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
+            playerLight.pointLightOuterRadius += 10;
+            playerLight.pointLightInnerRadius += 10;
+        } else if (other.gameObject.tag == "Arms") {
+            psd.ProgressPlayerState();
         }
     }
 

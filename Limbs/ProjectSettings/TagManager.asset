@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Eyes
   - Enemy
+  - Arms
+  - Moveable
   layers:
   - Default
   - TransparentFX
