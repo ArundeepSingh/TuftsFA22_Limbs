@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveVertical;
 
     private PlayerStateDevelopment psd;
+    public MonoBehaviour LadderMovement;
 
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         psd = PlayerStateDevelopment.GetInstance()!;
+        LadderMovement.enabled = false;
     }
 
     // Update is called once per frame
@@ -59,8 +62,11 @@ public class PlayerMovement : MonoBehaviour
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
+            LadderMovement.enabled = true;
+            this.enabled = false;
         } else if (other.gameObject.tag == "Arms") {
             psd.ProgressPlayerState();
+
         }
     }
 

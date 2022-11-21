@@ -42447,6 +42447,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: Char
+      value: 
+      objectReference: {fileID: 3412241283351201123, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 3412241283351201123, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
 --- !u!1 &913302727
@@ -70204,6 +70212,7 @@ GameObject:
   - component: {fileID: 1256684059}
   - component: {fileID: 1256684061}
   - component: {fileID: 1256684060}
+  - component: {fileID: 1256684062}
   m_Layer: 0
   m_Name: Ladders_TM
   m_TagString: Ladders
@@ -72487,6 +72496,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1256684062
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256684058}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1797054415
 GameObject:
   m_ObjectHideFlags: 0
