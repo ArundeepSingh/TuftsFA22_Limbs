@@ -52,10 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Eyes"){
             psd.ProgressPlayerState();
-            Debug.Log("Should be changing to next scene");
-            Debug.Log("Before change: " + transform.position);
             transform.position = new Vector2(5.07f, 0);
-            Debug.Log("After change: " + transform.position);
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
