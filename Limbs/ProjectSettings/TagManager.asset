@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Arms
   - Moveable
+  - Ladders
   layers:
   - Default
   - TransparentFX
