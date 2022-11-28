@@ -6,7 +6,7 @@ public class LadderMovement : MonoBehaviour
 {
     private float vertical;
     private float horizontal;
-    public float speed = 4f;
+    public float speed = 7f;
     private bool isLadder;
     private bool isClimbing;
 
@@ -32,12 +32,12 @@ public class LadderMovement : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = 5f;
+            rb.gravityScale = 3f;
         }
 
         if (!isLadder) {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-            rb.gravityScale = 5f;
+            rb.gravityScale = 3f;
         }
     }
 
