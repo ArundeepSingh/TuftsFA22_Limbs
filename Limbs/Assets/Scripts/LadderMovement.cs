@@ -21,6 +21,17 @@ public class LadderMovement : MonoBehaviour
         {
             isClimbing = true;
         }
+
+        // if (Input.GetKey("space")) {
+        //     Debug.Log("space key pressed");
+        //     rb.AddForce(new Vector2(0.0f, 1.0f), ForceMode2D.Impulse);
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.J)) {
+        //     Debug.Log("j pressed");
+        //     rb.AddForce(new Vector2(1.0f, 0.0f), ForceMode2D.Impulse);
+        // }
+
     }
 
     private void FixedUpdate()
@@ -28,7 +39,7 @@ public class LadderMovement : MonoBehaviour
         if (isClimbing)
         {
             rb.gravityScale = 0f;
-            rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+            rb.velocity = new Vector2(horizontal * speed, vertical * speed);            
         }
         else
         {
