@@ -9,6 +9,7 @@ TagManager:
   - Arms
   - Moveable
   - Ladders
+  - Platforms
   layers:
   - Default
   - TransparentFX

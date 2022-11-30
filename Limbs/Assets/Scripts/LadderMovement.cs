@@ -22,15 +22,17 @@ public class LadderMovement : MonoBehaviour
             isClimbing = true;
         }
 
-        // if (Input.GetKey("space")) {
-        //     Debug.Log("space key pressed");
-        //     rb.AddForce(new Vector2(0.0f, 1.0f), ForceMode2D.Impulse);
-        // }
+        if (isLadder && Input.GetKeyDown(KeyCode.J)) {
+            Debug.Log("shooting left");
+            rb.AddForce(new Vector2(-15.0f, 20.0f), ForceMode2D.Impulse);
+            isClimbing = false;
+        }   
 
-        // if (Input.GetKeyDown(KeyCode.J)) {
-        //     Debug.Log("j pressed");
-        //     rb.AddForce(new Vector2(1.0f, 0.0f), ForceMode2D.Impulse);
-        // }
+        if (isLadder && Input.GetKeyDown(KeyCode.K)) {
+            Debug.Log("shooting right");
+            rb.AddForce(new Vector2(15.0f, 20.0f), ForceMode2D.Impulse);
+            isClimbing = false;
+        }  
 
     }
 
@@ -39,16 +41,30 @@ public class LadderMovement : MonoBehaviour
         if (isClimbing)
         {
             rb.gravityScale = 0f;
-            rb.velocity = new Vector2(horizontal * speed, vertical * speed);            
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);         
         }
-        else
-        {
-            rb.gravityScale = 3f;
-        }
+        // else
+        // {
+        //     rb.gravityScale = 3f;
+        // }
+
+         
 
         if (!isLadder) {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            if (horizontal != 0) {
+                rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            }
             rb.gravityScale = 3f;
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladders"))
+        {
+            isLadder = true;
+            Debug.Log("entered ladder");
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
     }
 
