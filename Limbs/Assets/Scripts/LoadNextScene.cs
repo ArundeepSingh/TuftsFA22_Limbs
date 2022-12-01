@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextScene : MonoBehaviour
 {
-    public MonoBehaviour OrigMovement;
-    public MonoBehaviour LadderMovement;
     private GameController gc;
 
     void Start () {
