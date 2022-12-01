@@ -22,15 +22,15 @@ public class LadderMovement : MonoBehaviour
             isClimbing = true;
         }
 
-        if (isLadder && Input.GetKeyDown(KeyCode.J)) {
+        if (isLadder && Input.GetKeyDown(KeyCode.LeftArrow)) {
             Debug.Log("shooting left");
-            rb.AddForce(new Vector2(-15.0f, 20.0f), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(-7.5f, 10.0f), ForceMode2D.Impulse);
             isClimbing = false;
         }   
 
-        if (isLadder && Input.GetKeyDown(KeyCode.K)) {
+        if (isLadder && Input.GetKeyDown(KeyCode.RightArrow)) {
             Debug.Log("shooting right");
-            rb.AddForce(new Vector2(15.0f, 20.0f), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(7.5f, 10.0f), ForceMode2D.Impulse);
             isClimbing = false;
         }  
     }
@@ -63,6 +63,7 @@ public class LadderMovement : MonoBehaviour
         {
             isLadder = true;
             Debug.Log("entered ladder");
+            Debug.Log(collision.transform.position);
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
     }
