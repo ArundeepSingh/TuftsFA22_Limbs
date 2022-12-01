@@ -6,11 +6,23 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject myPlayer;
+    private MonoBehaviour PlayerMovementscript;
+    private MonoBehaviour LadderMovementscript;
+    
+
+    void Awake () {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerMovementscript = myPlayer.GetComponent("PlayerMovement") as MonoBehaviour;
+        LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
+        LadderMovementscript.enabled = false;
+        PlayerMovementscript.enabled = true;
     }
 
     // Update is called once per frame
@@ -24,17 +36,12 @@ public class GameController : MonoBehaviour
     }
 
     public void SwitchSceneAfterEyesPickup() {
-        // display the achievement
-        Image achievement = GameObject.Find("EyesAchievementUnlocked").GetComponent<Image>();
-        achievement.enabled = true;
-        
-        StartCoroutine(WaitForAchievement(() => {
-            SceneManager.LoadScene("EyesScene");
-        }));
+        SceneManager.LoadScene("UnlockAnimation");
     }
 
-    IEnumerator WaitForAchievement(System.Action callback) {
-        yield return new WaitForSeconds(3);
-        callback();
+    public void LoadEyesScene() {
+        SceneManager.LoadScene("EyesScene");
+        LadderMovementscript.enabled = true;
+        PlayerMovementscript.enabled = false;
     }
 }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EyesScene.unity
     guid: f4b04a9d7094cb044b467d087447be67
+  - enabled: 1
+    path: Assets/Scenes/UnlockAnimation.unity
+    guid: 0f456a5e04f1a4ba08d8530c42e2d9e0
   m_configObjects: {}

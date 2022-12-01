@@ -178,8 +178,97 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 796111432}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 796111432}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: LadderMovement
+      value: 
+      objectReference: {fileID: 796111447}
+    - target: {fileID: 7358159021111875523, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+      propertyPath: PlayerMovement
+      value: 
+      objectReference: {fileID: 796111447}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba83f5891433a6e42a6661d9d1350303, type: 3}
+--- !u!1 &26810850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26810852}
+  - component: {fileID: 26810851}
+  - component: {fileID: 26810853}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &26810851
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26810850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &26810852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26810850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.52, y: -1.06, z: 0.15404226}
+  m_LocalScale: {x: 8, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &26810853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26810850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9fa5da4787c4ca699d09311646194b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrigMovement: {fileID: 0}
+  LadderMovement: {fileID: 0}
 --- !u!1 &253801500
 GameObject:
   m_ObjectHideFlags: 0
@@ -15248,6 +15337,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rb: {fileID: 796111437}
+--- !u!114 &796111447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3412241283351201127, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
+  m_PrefabInstance: {fileID: 3412241283607450200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796111432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697de1d80115146a9924ce27fd1e3ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858484225
 GameObject:
   m_ObjectHideFlags: 0
@@ -15410,7 +15510,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989497413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -13.9, y: 6.6, z: 0.024584696}
+=======
+  m_LocalPosition: {x: 15.46, y: -5.92, z: 0.024584696}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24469,6 +24573,10 @@ PrefabInstance:
     - target: {fileID: 3412241283351201123, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
       propertyPath: m_Name
       value: Soul
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412241283351201124, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3412241283351201125, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
       propertyPath: m_RootOrder

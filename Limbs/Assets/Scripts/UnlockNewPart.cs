@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnlockNewPart : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class UnlockNewPart : MonoBehaviour
     public UnityEngine.Rendering.Universal.Light2D BigLight;
 
     private float total_time = 0; 
+    private GameController gc;
 
     // Start is called before the first frame update
     void Start()
     {
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
         new_sprite.SetActive(false);
     }
 
@@ -31,6 +34,11 @@ public class UnlockNewPart : MonoBehaviour
         
         if (total_time > 10.5f && BigLight.intensity > 1f) {
             BigLight.intensity -= 2f;
+        }
+
+        if (total_time > 11f) {
+            // load start scene again
+            gc.StartGame();
         }
     }
 }

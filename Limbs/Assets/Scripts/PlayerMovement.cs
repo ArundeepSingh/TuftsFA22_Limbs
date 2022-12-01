@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         psd = PlayerStateDevelopment.GetInstance()!;
-        LadderMovement.enabled = false;
     }
 
     // Update is called once per frame
@@ -43,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         // Left = -1, No keypress = 0, Right = 1
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-      
     }
 
     void FixedUpdate()
@@ -54,13 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Eyes"){
-            psd.ProgressPlayerState();
             transform.position = new Vector2(5.07f, 0);
+            psd.ProgressPlayerState();
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
-            LadderMovement.enabled = true;
-            this.enabled = false;
+            SceneManager.LoadScene("UnlockAnimation");
         } else if (other.gameObject.tag == "Arms") {
             psd.ProgressPlayerState();
         }
