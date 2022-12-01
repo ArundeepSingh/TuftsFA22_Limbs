@@ -33,7 +33,6 @@ public class LadderMovement : MonoBehaviour
             rb.AddForce(new Vector2(15.0f, 20.0f), ForceMode2D.Impulse);
             isClimbing = false;
         }  
-
     }
 
     private void FixedUpdate()
