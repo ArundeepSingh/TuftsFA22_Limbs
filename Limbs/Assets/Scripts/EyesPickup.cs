@@ -13,17 +13,12 @@ public class EyesPickup : MonoBehaviour
     {
         // get the game controller object
         gc = GameObject.Find("GameController").GetComponent<GameController>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // show eyes if they are set to be shown
+        gameObject.SetActive(gc.GetShowEyes());
     }
 
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
-            Debug.Log("Destroying eyes hopefully");
             Destroy(gameObject);
             gc.SwitchSceneAfterEyesPickup();
         }

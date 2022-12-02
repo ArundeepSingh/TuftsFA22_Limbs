@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3412241283351201048}
   - component: {fileID: 3412241283351201049}
   - component: {fileID: 126122948887881560}
+  - component: {fileID: 3095940336393803879}
+  - component: {fileID: 462208640165231666}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Player
@@ -83,6 +85,7 @@ MonoBehaviour:
   RightHeadSprite: {fileID: 21300000, guid: 7765f6f45599e4e2eab33c6b4e778bad, type: 3}
   IdleHeadSprite: {fileID: 21300000, guid: 7765f6f45599e4e2eab33c6b4e778bad, type: 3}
   movement_speed: 5
+  LadderMovement: {fileID: 0}
 --- !u!50 &3412241283351201126
 Rigidbody2D:
   serializedVersion: 4
@@ -247,3 +250,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currPlayerState: 0
+--- !u!114 &3095940336393803879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412241283351201123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ecad3abf6ad4dbf8335cb4c452493b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  rb: {fileID: 3412241283351201126}
+--- !u!114 &462208640165231666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412241283351201123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75dff4206c5c44c7cb7ede8f21b27f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  Sounds: []

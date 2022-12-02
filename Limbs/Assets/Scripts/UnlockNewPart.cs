@@ -38,7 +38,7 @@ public class UnlockNewPart : MonoBehaviour
 
         if (total_time > 11f) {
             // load start scene again
-            gc.StartGame();
+            gc.LoadStartScene();
         }
     }
 }

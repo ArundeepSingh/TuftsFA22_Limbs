@@ -52,12 +52,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Eyes"){
-            transform.position = new Vector2(5.07f, 0);
             psd.ProgressPlayerState();
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
-            SceneManager.LoadScene("UnlockAnimation");
         } else if (other.gameObject.tag == "Arms") {
             psd.ProgressPlayerState();
         }
