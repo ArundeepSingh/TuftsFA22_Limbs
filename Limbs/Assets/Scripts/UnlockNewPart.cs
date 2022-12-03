@@ -35,8 +35,10 @@ public class UnlockNewPart : MonoBehaviour
         if (total_time > 10.5f && BigLight.intensity > 1f) {
             BigLight.intensity -= 2f;
         }
+        
 
-        if (total_time > 11f) {
+        // SHOULD BE 11 SECONDS, CHANGE LATER
+        if (total_time > 1f) {
             // load start scene again
             gc.LoadStartScene();
         }

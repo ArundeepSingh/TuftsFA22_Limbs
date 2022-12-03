@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadNextScene : MonoBehaviour
+public class LoadTorsoSceneTrigger : MonoBehaviour
 {
     private GameController gc;
 
@@ -13,7 +13,7 @@ public class LoadNextScene : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
-            gc.LoadArmsScene();
+            gc.LoadTorsoScene();
         }
     }
 }
