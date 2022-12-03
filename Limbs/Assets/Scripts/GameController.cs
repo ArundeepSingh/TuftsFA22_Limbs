@@ -63,9 +63,9 @@ public class GameController : MonoBehaviour
         ShowEyes = false;
     }
 
-    public void LoadEyesScene() {
+    public void LoadArmsScene() {
         myPlayer.transform.position = new Vector3(15f, -14f, 0f);
-        SceneManager.LoadScene("EyesScene");
+        SceneManager.LoadScene("ArmsScene");
         LadderMovementscript.enabled = true;
         PlayerMovementscript.enabled = false;
     }

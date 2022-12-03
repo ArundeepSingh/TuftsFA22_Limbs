@@ -65,7 +65,7 @@ public class LadderMovement : MonoBehaviour
         } 
     }
 
-    private IEnumerator OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladders"))
         {
