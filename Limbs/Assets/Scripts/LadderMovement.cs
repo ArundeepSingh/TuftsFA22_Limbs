@@ -9,11 +9,20 @@ public class LadderMovement : MonoBehaviour
     public float speed = 7f;
     private bool isLadder;
     private bool isClimbing;
+    private bool CoolDown = false;
+    private float CoolDownTime = 1f;
+    private float TimeBetweenJumps = 0f;
 
     [SerializeField] private Rigidbody2D rb;
 
     void Update()
     {
+        TimeBetweenJumps += Time.deltaTime;
+
+        if (TimeBetweenJumps > CoolDownTime) {
+            Debug.Log("Cooling down");
+            CoolDown = false;
+        }
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -22,16 +31,21 @@ public class LadderMovement : MonoBehaviour
             isClimbing = true;
         }
 
-        if (isLadder && Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (isLadder && horizontal == -1 && !CoolDown) {
             Debug.Log("shooting left");
             rb.AddForce(new Vector2(-7.5f, 10.0f), ForceMode2D.Impulse);
             isClimbing = false;
+            CoolDown = true;
+            TimeBetweenJumps = 0f;
         }   
 
-        if (isLadder && Input.GetKeyDown(KeyCode.RightArrow)) {
+        // Input.GetKeyDown(KeyCode.RightArrow)    
+        if (isLadder && horizontal == 1 && !CoolDown) {
             Debug.Log("shooting right");
             rb.AddForce(new Vector2(7.5f, 10.0f), ForceMode2D.Impulse);
             isClimbing = false;
+            CoolDown = true;
+            TimeBetweenJumps = 0f;
         }  
     }
 
@@ -42,12 +56,6 @@ public class LadderMovement : MonoBehaviour
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);         
         }
-        // else
-        // {
-        //     rb.gravityScale = 3f;
-        // }
-
-         
 
         if (!isLadder) {
             if (horizontal != 0) {
@@ -57,13 +65,14 @@ public class LadderMovement : MonoBehaviour
         } 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladders"))
         {
             isLadder = true;
             Debug.Log("entered ladder");
             Debug.Log(collision.transform.position);
+            transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z);
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
     }

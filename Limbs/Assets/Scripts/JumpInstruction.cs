@@ -21,7 +21,10 @@ public class JumpInstruction : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        image.enabled = true;
+        if (other.gameObject.tag == "Player"){
+            image.enabled = true;
+            Debug.Log("showing message");
+        }
     }
 
     void OnTriggerExit2D(Collider2D other) {
