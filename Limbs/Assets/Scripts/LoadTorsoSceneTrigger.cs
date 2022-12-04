@@ -13,7 +13,11 @@ public class LoadTorsoSceneTrigger : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
-            gc.LoadTorsoScene();
+            if (gc.HasKey2) {
+                gc.LoadTorsoScene();
+            } else {
+                Debug.Log("Player doesn't have key for door 2");
+            }   
         }
     }
 }

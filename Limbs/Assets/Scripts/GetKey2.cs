@@ -11,14 +11,14 @@ public class GetKey2 : MonoBehaviour
     {
         // get the game controller object
         gc = GameObject.Find("GameController").GetComponent<GameController>();
-        // show eyes if they are set to be shown
-        door.SetActive(gc.ShowDoor1);
     }
 
     public void OnTriggerEnter2D (Collider2D other) {
+        Debug.Log("key collided with something");
         if (other.gameObject.tag == "Player"){
+            Debug.Log("collided with key");
             Destroy(gameObject);
-            gc.SwitchSceneAfterEyesPickup();
+            gc.HasKey2 = true;
         }
     }
 }
