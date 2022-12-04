@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,637 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c6c5e39973b4942b940a1abc6971dc
+      internalID: -139488185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 273.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2896bd70671e04cb8ae9f51724371979
+      internalID: 791419654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 273.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8d0826e03184287baefead3465e643
+      internalID: -1681811434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 273.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc55eb56ae7eb4522a5f6be9a0174ab4
+      internalID: -757484853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 273.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6293c1e0affe04fa5b98d074de663da8
+      internalID: -784677232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d29fb85cb4f343ab9bc31f39bed478c
+      internalID: 553513299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 255.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3401e3dfe2443678b85fa81766846d
+      internalID: -940066367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 255.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aee79bfc96c34354b55cd6e2757ec6e
+      internalID: 2040885809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 255.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1002f3be2a9d04d46b1c32e3afd648ff
+      internalID: 726097195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 255.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f87901f7f7b4e27b75f28cb645511f
+      internalID: -1766171644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c43d61511ee4bbeb8dc1abe52c1244
+      internalID: -1023207037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_11
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 237.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19774a2686e714c8fbaf1c6205f4acd8
+      internalID: -1874426906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_12
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 237.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23756b4ec00084491ba1763c78de1aff
+      internalID: -1455345548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 237.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e830729ac5145aaa081e64ac0a51b4
+      internalID: -1105939573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 237.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962681d700d9b459c9a046b6af181a1e
+      internalID: -860260589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 219.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3243cf34f4df4df78d3ce3dd00c04d3
+      internalID: 351104481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 219.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26a2211f96824b10a40c8c9cdfa7e33
+      internalID: 1186151482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 219.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1cad81e38a64fe2be08f3c834f225d
+      internalID: -119708310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_18
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 219.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f7dc0fc30634d708651f00a403f3db
+      internalID: -56364164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 219.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a24296e876f64ed38fbf426b6b82bd9
+      internalID: 1911126012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 201.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedfd65cce7d644d9a45b1b5a2d3dbd2
+      internalID: -466744075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_21
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 201.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ee10a2f46d64c7aa1b1dfa5c69eb17
+      internalID: -443853736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 201.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27295e6bca5a40b286a127edc001c8f
+      internalID: 1016515238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_23
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 201.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f8d83afe3f6479ea65dc9422de52c0
+      internalID: -1688163338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_24
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 201.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345a825bda73b453d8698e4b18daca0c
+      internalID: 1665268738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947108bb5c8334cfb9eca28829d92e1c
+      internalID: -1200338243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_26
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 183.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37b29708ecec44f9b0317d908ced9f5
+      internalID: -557276438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_27
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 183.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fee0995ae3404cd1835b986cd7c4a23
+      internalID: -331261549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_28
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 183.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96f01e296e964cd386a459e3aa15209
+      internalID: -366611069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Final TileMap Draft 2_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 183.75
+        width: 18.25
+        height: 18.25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e990424c9da45dcb84ec78069239ff
+      internalID: 1571013556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +743,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Final TileMap Draft 2_4: -784677232
+      Final TileMap Draft 2_12: -1455345548
+      Final TileMap Draft 2_28: -366611069
+      Final TileMap Draft 2_26: -557276438
+      Final TileMap Draft 2_15: 351104481
+      Final TileMap Draft 2_9: -1766171644
+      Final TileMap Draft 2_16: 1186151482
+      Final TileMap Draft 2_18: -56364164
+      Final TileMap Draft 2_2: -1681811434
+      Final TileMap Draft 2_0: -139488185
+      Final TileMap Draft 2_29: 1571013556
+      Final TileMap Draft 2_3: -757484853
+      Final TileMap Draft 2_6: -940066367
+      Final TileMap Draft 2_1: 791419654
+      Final TileMap Draft 2_11: -1874426906
+      Final TileMap Draft 2_20: -466744075
+      Final TileMap Draft 2_19: 1911126012
+      Final TileMap Draft 2_23: -1688163338
+      Final TileMap Draft 2_21: -443853736
+      Final TileMap Draft 2_17: -119708310
+      Final TileMap Draft 2_25: -1200338243
+      Final TileMap Draft 2_5: 553513299
+      Final TileMap Draft 2_24: 1665268738
+      Final TileMap Draft 2_13: -1105939573
+      Final TileMap Draft 2_7: 2040885809
+      Final TileMap Draft 2_14: -860260589
+      Final TileMap Draft 2_8: 726097195
+      Final TileMap Draft 2_22: 1016515238
+      Final TileMap Draft 2_10: -1023207037
+      Final TileMap Draft 2_27: -331261549
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
