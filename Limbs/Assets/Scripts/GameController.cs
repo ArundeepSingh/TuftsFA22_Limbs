@@ -13,14 +13,15 @@ public class GameController : MonoBehaviour
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
     public bool ShowDoor1;
+    public bool ShowTorso;
     private bool ShowEyes;
     public bool HasKey2;
-    
+    public int CurHealth;
+    public int MaxHealth; 
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,9 @@ public class GameController : MonoBehaviour
         ShowEyes = true;
         ShowDoor1 = false;
         HasKey2 = false;
+        ShowTorso = true;
+        MaxHealth = 100;
+        CurHealth = 100;
         DontDestroyOnLoad(Camera.main);
     }
 

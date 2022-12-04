@@ -10,6 +10,7 @@ TagManager:
   - Moveable
   - Ladders
   - Platforms
+  - Torso
   layers:
   - Default
   - TransparentFX

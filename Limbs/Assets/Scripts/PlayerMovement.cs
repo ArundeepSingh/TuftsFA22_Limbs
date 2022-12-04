@@ -58,6 +58,9 @@ public class PlayerMovement : MonoBehaviour
             playerLight.pointLightInnerRadius += 10;
         } else if (other.gameObject.tag == "Arms") {
             psd.ProgressPlayerState();
+        } else if (other.gameObject.tag == "Torso") {
+            Debug.Log("Progressing to Torso");
+            psd.ProgressPlayerState();
         }
     }
 
