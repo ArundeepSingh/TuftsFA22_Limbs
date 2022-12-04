@@ -9,10 +9,12 @@ public class GameController : MonoBehaviour
     public GameObject myPlayer;
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
-    private bool ShowEyes;
     private Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
+    public bool ShowDoor1;
+    private bool ShowEyes;
+    public bool HasKey2;
     
 
     void Awake () {
@@ -30,7 +32,8 @@ public class GameController : MonoBehaviour
         LadderMovementscript.enabled = false;
         PlayerMovementscript.enabled = true;
         ShowEyes = true;
-        
+        ShowDoor1 = false;
+        HasKey2 = false;
         DontDestroyOnLoad(Camera.main);
     }
 
@@ -51,7 +54,8 @@ public class GameController : MonoBehaviour
     }
 
     public void StartGame() {
-        PlayerPos = new Vector3(21f, -10f, 0f);
+        // PlayerPos = new Vector3(21f, -10f, 0f);
+        PlayerPos = new Vector3(-14.5f, -8f, 0f);
         LoadStartScene();
     }
 
@@ -64,6 +68,7 @@ public class GameController : MonoBehaviour
         CameraFollowscript.enabled = false;
         Debug.Log("going to unlock animation, setting eyes to false");
         ShowEyes = false;
+        ShowDoor1 = true;
     }
 
     public void LoadArmsScene() {
