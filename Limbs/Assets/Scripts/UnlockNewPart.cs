@@ -38,7 +38,7 @@ public class UnlockNewPart : MonoBehaviour
         
 
         // SHOULD BE 11 SECONDS, CHANGE LATER
-        if (total_time > 1f) {
+        if (total_time > 11f) {
             // load start scene again
             gc.LoadStartScene();
         }
