@@ -58,8 +58,10 @@ public class GameController : MonoBehaviour
     }
 
     public void StartGame() {
-        // PlayerPos = new Vector3(21f, -10f, 0f);
-        PlayerPos = new Vector3(-14.5f, -8f, 0f);
+        // BELOW IS THE POSITION FOR FINAL PUSH
+        PlayerPos = new Vector3(21f, -10f, 0f);
+        // BELOW IS POSITION FOR TESTING
+        // PlayerPos = new Vector3(-14.5f, -8f, 0f);
         LoadStartScene();
     }
 
