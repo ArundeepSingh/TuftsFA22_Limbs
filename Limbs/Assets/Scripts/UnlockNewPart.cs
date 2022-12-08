@@ -9,6 +9,7 @@ public class UnlockNewPart : MonoBehaviour
     public GameObject new_part;
     public GameObject new_sprite;
     public UnityEngine.Rendering.Universal.Light2D BigLight;
+    public string sceneToLoad;
 
     private float total_time = 0; 
     private GameController gc;
@@ -36,11 +37,9 @@ public class UnlockNewPart : MonoBehaviour
             BigLight.intensity -= 2f;
         }
         
-
-        // SHOULD BE 11 SECONDS, CHANGE LATER
+        // 11 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
         if (total_time > 11f) {
-            // load start scene again
-            gc.LoadStartScene();
+            gc.LoadScene(sceneToLoad);
         }
     }
 }

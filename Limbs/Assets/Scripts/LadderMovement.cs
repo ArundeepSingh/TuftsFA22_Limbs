@@ -20,7 +20,6 @@ public class LadderMovement : MonoBehaviour
         TimeBetweenJumps += Time.deltaTime;
 
         if (TimeBetweenJumps > CoolDownTime) {
-            Debug.Log("Cooling down");
             CoolDown = false;
         }
         vertical = Input.GetAxisRaw("Vertical");

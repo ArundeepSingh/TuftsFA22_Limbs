@@ -52,11 +52,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Eyes"){
+            Debug.Log("progressing player state from eyes");
             psd.ProgressPlayerState();
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
         } else if (other.gameObject.tag == "Arms") {
+            Debug.Log("Progressing player state from arms");
             psd.ProgressPlayerState();
         } else if (other.gameObject.tag == "Torso") {
             Debug.Log("Progressing to Torso");

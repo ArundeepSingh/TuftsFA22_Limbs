@@ -9,15 +9,17 @@ public class GameController : MonoBehaviour
     public GameObject myPlayer;
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
-    private Vector3 PlayerPos;
+    public Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
     public bool ShowDoor1;
     public bool ShowTorso;
-    private bool ShowEyes;
+    public bool ShowEyes;
     public bool HasKey2;
+    public bool ShowArms;
     public int CurHealth;
-    public int MaxHealth; 
+    public int MaxHealth;
+    public bool CanClimb;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -36,39 +38,25 @@ public class GameController : MonoBehaviour
         ShowDoor1 = false;
         HasKey2 = false;
         ShowTorso = true;
+        ShowArms = true;
         MaxHealth = 100;
         CurHealth = 100;
+        CanClimb = false;
         DontDestroyOnLoad(Camera.main);
     }
 
-    // getters
-    public bool GetShowEyes() {
-        return ShowEyes;
-    }
-
-    public void SetShowEyes(bool ToSet) {
-        ShowEyes = ToSet;
-    }
-
-    public void LoadStartScene() {
-        SceneManager.LoadScene("StartScene");
-        myPlayer.transform.position = PlayerPos;
-        myPlayer.gameObject.SetActive(true);
-        CameraFollowscript.enabled = true;
-    }
-
     public void StartGame() {
-        // BELOW IS THE POSITION FOR FINAL PUSH
-        PlayerPos = new Vector3(21f, -10f, 0f);
-        // BELOW IS POSITION FOR TESTING
-        // PlayerPos = new Vector3(-14.5f, -8f, 0f);
-        LoadStartScene();
+        // POSITION FOR TESTING
+        // PlayerPos = new Vector3(-14.5f, -7f, 0f);
+        // POSITION FOR FINAL GAME
+        PlayerPos = new Vector3(20f, -7.5f, 0f);
+        LoadScene("Start");
     }
 
     public void SwitchSceneAfterEyesPickup() {
         PlayerPos = myPlayer.transform.position;
         Debug.Log(PlayerPos);
-        SceneManager.LoadScene("UnlockAnimation");
+        SceneManager.LoadScene("UnlockAnimationEyes");
         myPlayer.gameObject.SetActive(false);
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
         CameraFollowscript.enabled = false;
@@ -77,18 +65,46 @@ public class GameController : MonoBehaviour
         ShowDoor1 = true;
     }
 
-    public void LoadArmsScene() {
-        myPlayer.transform.position = new Vector3(15f, -14f, 0f);
-        SceneManager.LoadScene("ArmsScene");
-        LadderMovementscript.enabled = true;
-        PlayerMovementscript.enabled = false;
+    public void SwitchSceneAfterArmsPickup() {
+        PlayerPos = myPlayer.transform.position;
+        Debug.Log(PlayerPos);
+        SceneManager.LoadScene("UnlockAnimationArms");
+        myPlayer.gameObject.SetActive(false);
+        Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        CameraFollowscript.enabled = false;
+        ShowArms = false;
+        CanClimb = true;
     }
 
-    public void LoadTorsoScene() {
-        SceneManager.LoadScene("TorsoScene");
-        LadderMovementscript.enabled = false;
-        PlayerMovementscript.enabled = true;
-        myPlayer.transform.position = new Vector3(0f, 0f, 0f);
-        rb.gravityScale = 0f;
+    public void LoadScene(string ToLoad) {
+        myPlayer.gameObject.SetActive(true);
+        myPlayer.transform.position = PlayerPos;
+        CameraFollowscript.enabled = true;
+        Vector3 CameraPos = PlayerPos;
+        CameraPos.z = -10;
+        Camera.main.transform.position = CameraPos;
+        switch(ToLoad) 
+            {
+            case "Start":
+                SceneManager.LoadScene("StartScene");
+                break;
+            case "Arms":
+                SceneManager.LoadScene("ArmsScene");
+                LadderMovementscript.enabled = true;
+                PlayerMovementscript.enabled = false;
+                break;
+            case "Torso":
+                SceneManager.LoadScene("TorsoScene");
+                LadderMovementscript.enabled = false;
+                PlayerMovementscript.enabled = true;
+                myPlayer.transform.position = new Vector3(0f, 0f, 0f);
+                rb.gravityScale = 0f;
+                break;
+            default:
+                // code block
+                break;
+            }
     }
+
+    
 }

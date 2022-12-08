@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68795532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.4, y: -7.4, z: 0}
+  m_LocalPosition: {x: -19.25, y: -7.4, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28507,11 +28507,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4419881115134416946, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4419881115198216639, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4419881115240181654, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_Pivot.x
@@ -28603,7 +28603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4419881115240181674, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
