@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 462208640165231666}
   - component: {fileID: 2146891900730160629}
   - component: {fileID: 4505495195073154302}
+  - component: {fileID: 7805600405179688699}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Player
@@ -474,3 +475,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &7805600405179688699
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412241283351201123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a6e64a06e99bf41b48c21f47dbf07243, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
