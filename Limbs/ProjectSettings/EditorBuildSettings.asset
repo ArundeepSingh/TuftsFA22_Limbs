@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnlockAnimationArms.unity
     guid: 3c7cd53542dab4f1fbf9b748b11974f0
+  - enabled: 1
+    path: Assets/Scenes/UnlockAnimationTorso.unity
+    guid: bfcd9c81f8f9f44109781a39f3fdf64c
   m_configObjects: {}

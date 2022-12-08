@@ -47,9 +47,9 @@ public class GameController : MonoBehaviour
 
     public void StartGame() {
         // POSITION FOR TESTING
-        // PlayerPos = new Vector3(-14.5f, -7f, 0f);
+        PlayerPos = new Vector3(-14.5f, -5f, 0f);
         // POSITION FOR FINAL GAME
-        PlayerPos = new Vector3(20f, -7.5f, 0f);
+        //PlayerPos = new Vector3(20f, -7.5f, 0f);
         LoadScene("Start");
     }
 
@@ -74,6 +74,15 @@ public class GameController : MonoBehaviour
         CameraFollowscript.enabled = false;
         ShowArms = false;
         CanClimb = true;
+    }
+
+    public void SwitchSceneAfterTorsoPickup() {
+        PlayerPos = myPlayer.transform.position;
+        SceneManager.LoadScene("UnlockAnimationTorso");
+        myPlayer.gameObject.SetActive(false);
+        Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        CameraFollowscript.enabled = false;
+        ShowTorso = false;
     }
 
     public void LoadScene(string ToLoad) {

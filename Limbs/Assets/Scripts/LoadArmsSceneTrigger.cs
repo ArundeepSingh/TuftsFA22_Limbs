@@ -14,9 +14,9 @@ public class LoadArmsSceneTrigger : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
             // REAL POS
-            gc.PlayerPos = new Vector3(20f, -14f, 0f);
+            //gc.PlayerPos = new Vector3(20f, -14f, 0f);
             // TESTING POS
-            //gc.PlayerPos = new Vector3(25f, -48f, 0f);
+            gc.PlayerPos = new Vector3(25f, -48f, 0f);
             gc.LoadScene("Arms");           
         }
     }
