@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 186341293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.74085194, y: -0.27089074, z: 9.925765}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371319688}
@@ -236,9 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1570f33b2ed8d495d8e4046ff04ff3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  old_sprite: {fileID: 0}
-  new_part: {fileID: 0}
-  new_sprite: {fileID: 0}
+  old_sprite: {fileID: 1912805915}
+  new_part: {fileID: 1594209011}
+  new_sprite: {fileID: 186341293}
   BigLight: {fileID: 1339226814}
   sceneToLoad: Torso
 --- !u!4 &371319688
