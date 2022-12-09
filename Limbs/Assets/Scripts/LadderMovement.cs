@@ -57,9 +57,9 @@ public class LadderMovement : MonoBehaviour
         }
 
         if (!isLadder) {
-            if (horizontal != 0) {
+            //if (horizontal != 0) {
                 rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-            }
+            //}
             rb.gravityScale = 3f;
         } 
     }
