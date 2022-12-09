@@ -27,13 +27,18 @@ public class PlayerMovement : MonoBehaviour
     private PlayerStateDevelopment psd;
     public MonoBehaviour LadderMovement;
 
+    // Animation
+    public Animator HeadAnimator;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        psd = PlayerStateDevelopment.GetInstance()!;
+        HeadAnimator = GetComponent<Animator>();
+        HeadAnimator.enabled = false;
+        psd = PlayerStateDevelopment.GetInstance();
     }
 
     // Update is called once per frame
@@ -46,6 +51,20 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
+            if (movement.x == 1) HeadAnimator.SetBool("right", true);
+            else if (movement.x == -1) HeadAnimator.SetBool("left", true);
+            else if (movement.y == 1) HeadAnimator.SetBool("up", true);
+            else if (movement.y == -1) HeadAnimator.SetBool("down", true);
+            else {
+                HeadAnimator.SetBool("up", false);
+                HeadAnimator.SetBool("down", false);
+                HeadAnimator.SetBool("left", false);
+                HeadAnimator.SetBool("right", false);
+            }
+        }
+
+
         rb.MovePosition(rb.position + movement * movement_speed * Time.fixedDeltaTime);
         PickSprite(movement.x);
     }
@@ -54,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Eyes"){
             Debug.Log("progressing player state from eyes");
             psd.ProgressPlayerState();
+            HeadAnimator.enabled = true;
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;
