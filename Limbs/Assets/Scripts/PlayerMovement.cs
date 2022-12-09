@@ -47,10 +47,7 @@ public class PlayerMovement : MonoBehaviour
         // Left = -1, No keypress = 0, Right = 1
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-    }
 
-    void FixedUpdate()
-    {
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
             if (movement.x == 1) HeadAnimator.SetBool("right", true);
             else if (movement.x == -1) HeadAnimator.SetBool("left", true);
@@ -63,8 +60,10 @@ public class PlayerMovement : MonoBehaviour
                 HeadAnimator.SetBool("right", false);
             }
         }
+    }
 
-
+    void FixedUpdate()
+    {
         rb.MovePosition(rb.position + movement * movement_speed * Time.fixedDeltaTime);
         PickSprite(movement.x);
     }
