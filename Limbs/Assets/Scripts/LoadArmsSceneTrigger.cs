@@ -18,7 +18,7 @@ public class LoadArmsSceneTrigger : MonoBehaviour
             // TESTING POS
             Debug.Log("door is triggered");
             gc.PlayerPos = new Vector3(25f, -48f, 0f);
-            gc.LoadScene("Arms");           
+            gc.LoadScene("Arms");          
         }
     }
 }
