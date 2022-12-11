@@ -23,8 +23,7 @@ public class GameController : MonoBehaviour
     public int MaxHealth;
     public bool CanClimb;
     private Animator PlayerAnimator;
-
-    
+    private GameObject HealthBar;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -122,5 +121,6 @@ public class GameController : MonoBehaviour
             default:
                 break;
             }
+        HealthBar = GameObject.Find("HealthBar");
     }    
 }

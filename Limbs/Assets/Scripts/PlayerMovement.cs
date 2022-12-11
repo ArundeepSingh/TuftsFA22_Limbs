@@ -84,7 +84,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     void PickSprite(float direction)
     {
         switch (psd.currPlayerState) {
