@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public MonoBehaviour LadderMovement;
 
     // Animation
-    public Animator HeadAnimator;
+    public Animator PlayerAnimator;
 
 
     // Start is called before the first frame update
@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        HeadAnimator = GetComponent<Animator>();
-        HeadAnimator.enabled = false;
+        PlayerAnimator = GetComponent<Animator>();
+        PlayerAnimator.enabled = false;
         psd = PlayerStateDevelopment.GetInstance();
     }
 
@@ -49,15 +49,14 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
-            if (movement.x == 1) HeadAnimator.SetBool("right", true);
-            else if (movement.x == -1) HeadAnimator.SetBool("left", true);
-            else if (movement.y == 1) HeadAnimator.SetBool("up", true);
-            else if (movement.y == -1) HeadAnimator.SetBool("down", true);
+            if (movement.x == 1) PlayerAnimator.SetBool("right", true);
+            else if (movement.x == -1) PlayerAnimator.SetBool("left", true);
+            else if (movement.y == 1) PlayerAnimator.SetBool("up", true);
+            else if (movement.y == -1) PlayerAnimator.SetBool("down", true);
             else {
-                HeadAnimator.SetBool("up", false);
-                HeadAnimator.SetBool("down", false);
-                HeadAnimator.SetBool("left", false);
-                HeadAnimator.SetBool("right", false);
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
             }
         }
     }
@@ -72,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Eyes"){
             Debug.Log("progressing player state from eyes");
             psd.ProgressPlayerState();
-            HeadAnimator.enabled = true;
+            PlayerAnimator.enabled = true;
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             playerLight.pointLightOuterRadius += 10;
             playerLight.pointLightInnerRadius += 10;

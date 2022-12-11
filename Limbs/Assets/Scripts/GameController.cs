@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public int CurHealth;
     public int MaxHealth;
     public bool CanClimb;
+    private Animator PlayerAnimator;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
         LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
         CameraFollowscript = Camera.main.GetComponent("CameraFollow2DLERP") as MonoBehaviour;
         rb = myPlayer.GetComponent<Rigidbody2D>();
+        PlayerAnimator = myPlayer.GetComponent<Animator>();
         LadderMovementscript.enabled = false;
         PlayerMovementscript.enabled = true;
         ShowEyes = true;
@@ -101,6 +103,9 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
                 break;
             case "Torso":
                 SceneManager.LoadScene("TorsoScene");

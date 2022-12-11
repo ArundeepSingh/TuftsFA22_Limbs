@@ -12,8 +12,17 @@ public class LadderMovement : MonoBehaviour
     private bool CoolDown = false;
     private float CoolDownTime = 1f;
     private float TimeBetweenJumps = 0f;
+    private Animator PlayerAnimator;
+    private PlayerStateDevelopment psd;
+
 
     [SerializeField] private Rigidbody2D rb;
+
+    void Start() {
+        PlayerAnimator = GetComponent<Animator>();
+        psd = PlayerStateDevelopment.GetInstance();
+
+    }
 
     void Update()
     {
@@ -24,6 +33,16 @@ public class LadderMovement : MonoBehaviour
         }
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
+            if (horizontal == 1) PlayerAnimator.SetBool("right", true);
+            else if (horizontal == -1) PlayerAnimator.SetBool("left", true);
+            else {
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+            }
+        }
 
         if (isLadder && Mathf.Abs(vertical) > 0f)
         {
