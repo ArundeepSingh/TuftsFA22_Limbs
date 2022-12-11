@@ -81,6 +81,7 @@ public class GameController : MonoBehaviour
         CameraFollowscript.enabled = false;
         ShowArms = false;
         CanClimb = true;
+        PlayerAnimator.SetBool("armwalk", true);
     }
 
     public void SwitchSceneAfterTorsoPickup() {
@@ -108,9 +109,9 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
+                // foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
+                //     PlayerAnimator.SetBool(parameter.name, false);            
+                // }
                 break;
             case "Torso":
                 SceneManager.LoadScene("TorsoScene");

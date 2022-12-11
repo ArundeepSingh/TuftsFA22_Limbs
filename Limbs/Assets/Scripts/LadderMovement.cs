@@ -38,7 +38,18 @@ public class LadderMovement : MonoBehaviour
             if (horizontal == 1) PlayerAnimator.SetBool("right", true);
             else if (horizontal == -1) PlayerAnimator.SetBool("left", true);
             else {
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+            }
+        }
+
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
+            if (horizontal == 1) PlayerAnimator.SetBool("right", true);
+            else if (horizontal == -1) PlayerAnimator.SetBool("left", true);
+            else {
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {  
+                    if (parameter.name == "armwalk") continue;          
                     PlayerAnimator.SetBool(parameter.name, false);            
                 }
             }
