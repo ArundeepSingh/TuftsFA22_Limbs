@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
+    public Canvas canvas;
+    public GameObject MenuGraphics;
     public bool ShowDoor1;
     public bool ShowTorso;
     public bool ShowEyes;
@@ -21,6 +23,8 @@ public class GameController : MonoBehaviour
     public int MaxHealth;
     public bool CanClimb;
     private Animator PlayerAnimator;
+
+    
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -52,6 +56,7 @@ public class GameController : MonoBehaviour
         PlayerPos = new Vector3(-14.5f, -5f, 0f);
         // POSITION FOR FINAL GAME
         //PlayerPos = new Vector3(20f, -7.5f, 0f);
+        Destroy(MenuGraphics);
         LoadScene("Start");
     }
 
@@ -115,10 +120,7 @@ public class GameController : MonoBehaviour
                 rb.gravityScale = 0f;
                 break;
             default:
-                // code block
                 break;
             }
-    }
-
-    
+    }    
 }
