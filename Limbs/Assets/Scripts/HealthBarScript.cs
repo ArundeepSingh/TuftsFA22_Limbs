@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class HealthBar : MonoBehaviour {
+public class HealthBarScript : MonoBehaviour {
 
-      public float startHealth = 100;
-      private float health;
       //public GameObject deathEffect;
       public Image healthBar;
       public Color healthyColor = new Color(0.3f, 0.8f, 0.3f);
@@ -18,17 +16,21 @@ public class HealthBar : MonoBehaviour {
       private float theTimer;
       public float damageAmt = 10f;
 
+      private HitEnemy HitEnemyScript;
+      private GameController gc;
+
       private void Start () {
-            health = startHealth;
             theTimer= timeToDamage;
+            HitEnemyScript = GameObject.Find("Soul").GetComponent<HitEnemy>();
+            gc = GameObject.Find("GameController").GetComponent<GameController>();
       }
 
 // this timer is just to test damage. Comment-out when no longer needed
       void FixedUpdate () {
-            theTimer -= Time.deltaTime;
-            if (theTimer <= 0) {
-                  TakeDamage(damageAmt);
-                  theTimer = timeToDamage;
+            healthBar.fillAmount = gc.Health / gc.MaxHealth;
+            if (HitEnemyScript.GotHit) {
+                  TakeDamage(5f);
+                  HitEnemyScript.GotHit = false;
             }
       }
 
@@ -37,11 +39,11 @@ public class HealthBar : MonoBehaviour {
       }
 
       public void TakeDamage (float amount){
-            health -= amount;
-            healthBar.fillAmount = health / startHealth;
+            gc.Health -= amount;
+            healthBar.fillAmount = gc.Health / gc.MaxHealth;
             //turn red at low health:
-            if (health < 0.3f){
-                  if ((health * 100f) % 3 <= 0){
+            if (gc.Health < 0.3f){
+                  if (gc.Health <= 0){
                         SetColor(Color.white);
                         Die();
                   }
@@ -53,8 +55,6 @@ public class HealthBar : MonoBehaviour {
                   SetColor(healthyColor);
             }
       }
-
-
 
       public void Die(){
             Debug.Log("You Died So Much");

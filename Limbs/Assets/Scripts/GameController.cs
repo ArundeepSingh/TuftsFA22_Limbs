@@ -19,11 +19,10 @@ public class GameController : MonoBehaviour
     public bool ShowEyes;
     public bool HasKey2;
     public bool ShowArms;
-    public int CurHealth;
-    public int MaxHealth;
     public bool CanClimb;
     private Animator PlayerAnimator;
-    private GameObject HealthBar;
+    public float Health;
+    public float MaxHealth = 100f;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -44,9 +43,8 @@ public class GameController : MonoBehaviour
         HasKey2 = false;
         ShowTorso = true;
         ShowArms = true;
-        MaxHealth = 100;
-        CurHealth = 100;
         CanClimb = false;
+        Health = MaxHealth; // MAX HEALTH
         DontDestroyOnLoad(Camera.main);
     }
 
@@ -122,6 +120,5 @@ public class GameController : MonoBehaviour
             default:
                 break;
             }
-        HealthBar = GameObject.Find("HealthBar");
-    }    
+    }
 }

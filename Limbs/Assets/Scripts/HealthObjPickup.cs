@@ -16,8 +16,7 @@ public class HealthObjPickup : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
-            gc.CurHealth += 10;
-            Debug.Log(gc.CurHealth);
+            gc.Health += 10;
         }
     }
 }
