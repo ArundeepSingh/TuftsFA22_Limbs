@@ -116,6 +116,12 @@ public class GameController : MonoBehaviour
                 myPlayer.transform.position = new Vector3(0f, 0f, 0f);
                 rb.gravityScale = 0f;
                 break;
+            case "Legs":
+                SceneManager.LoadScene("LegsScene");
+                break;
+            case "Boss":
+                SceneManager.LoadScene("BossScene");
+                break;
             default:
                 break;
             }
