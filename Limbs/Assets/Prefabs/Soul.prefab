@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 462208640165231666}
   - component: {fileID: 2146891900730160629}
   - component: {fileID: 4505495195073154302}
+  - component: {fileID: 6693161662652524764}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Player
@@ -88,6 +89,7 @@ MonoBehaviour:
   IdleHeadSprite: {fileID: 21300000, guid: 7765f6f45599e4e2eab33c6b4e778bad, type: 3}
   movement_speed: 5
   LadderMovement: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!50 &3412241283351201126
 Rigidbody2D:
   serializedVersion: 4
@@ -282,6 +284,7 @@ MonoBehaviour:
   Sounds:
   - {fileID: 2146891900730160629}
   - {fileID: 4505495195073154302}
+  GotHit: 0
 --- !u!82 &2146891900730160629
 AudioSource:
   m_ObjectHideFlags: 0
@@ -474,3 +477,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6693161662652524764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412241283351201123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39ae460afa524fa6a6b3f88f625c2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

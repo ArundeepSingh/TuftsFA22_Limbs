@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.gameObject.tag == "Eyes"){
-            Debug.Log("progressing player state from eyes");
             psd.ProgressPlayerState();
             PlayerAnimator.enabled = true;
             UnityEngine.Rendering.Universal.Light2D playerLight = this.GetComponent<UnityEngine.Rendering.Universal.Light2D>();

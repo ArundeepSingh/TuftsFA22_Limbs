@@ -34,13 +34,11 @@ public class UnlockNewPart : MonoBehaviour
         }
         
         if (total_time > 6.5f && BigLight.intensity > 1f) {
-            Debug.Log("decreasing light");
             BigLight.intensity -= 2f;
         }
         
         // 11 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
-        if (total_time > 8f) {
-            Debug.Log("switching back to " + sceneToLoad);
+        if (total_time > 1f) {
             gc.LoadScene(sceneToLoad);
         }
     }
