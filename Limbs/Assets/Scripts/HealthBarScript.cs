@@ -61,6 +61,6 @@ public class HealthBarScript : MonoBehaviour {
            // death stuff. change scene? how about a particle effect?
             //Vector3 objPos = this.transform.position
             //Instantiate(deathEffect, objPos, Quaternion.identity) as GameObject;
-           //SceneManager.LoadScene ("Scene_lose");
+           SceneManager.LoadScene("LoseScene");
       }
 }
