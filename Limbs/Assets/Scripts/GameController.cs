@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     private Animator PlayerAnimator;
     public float Health;
     public float MaxHealth = 100f;
+    public bool enableArmsAnim;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour
         ShowTorso = true;
         ShowArms = true;
         CanClimb = false;
+        enableArmsAnim = false;
         Health = MaxHealth; // MAX HEALTH
         DontDestroyOnLoad(Camera.main);
     }
@@ -105,6 +107,8 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
+                // LINE BELOW STARTS ARMWALK ANIMATION RIGHT WHEN SCENE LOADS
+                PlayerAnimator.SetBool("armwalk", enableArmsAnim);
                 // foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
                 //     PlayerAnimator.SetBool(parameter.name, false);            
                 // }

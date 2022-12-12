@@ -537,6 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 2078254723}
     m_RemovedComponents:
     - {fileID: 7805600405179688699, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
+    - {fileID: 5692473146515343053, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
 --- !u!82 &497119925 stripped
 AudioSource:
