@@ -28,7 +28,7 @@ public class HealthBarScript : MonoBehaviour {
 // this timer is just to test damage. Comment-out when no longer needed
       void FixedUpdate () {
             if (gc.BleedingOut) {
-                  gc.Health -= 1f * Time.deltaTime;
+                  TakeDamage(1f * Time.deltaTime);
                   //Debug.Log(gc.Health);
             }
             healthBar.fillAmount = gc.Health / gc.MaxHealth;
@@ -46,7 +46,7 @@ public class HealthBarScript : MonoBehaviour {
             gc.Health -= amount;
             healthBar.fillAmount = gc.Health / gc.MaxHealth;
             //turn red at low health:
-            if (gc.Health < 0.3f){
+            if (gc.Health < 0.3f * gc.MaxHealth){
                   if (gc.Health <= 0){
                         SetColor(Color.white);
                         Die();
