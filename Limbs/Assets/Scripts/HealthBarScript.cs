@@ -27,6 +27,10 @@ public class HealthBarScript : MonoBehaviour {
 
 // this timer is just to test damage. Comment-out when no longer needed
       void FixedUpdate () {
+            if (gc.BleedingOut) {
+                  gc.Health -= 1f * Time.deltaTime;
+                  //Debug.Log(gc.Health);
+            }
             healthBar.fillAmount = gc.Health / gc.MaxHealth;
             if (HitEnemyScript.GotHit) {
                   TakeDamage(5f);

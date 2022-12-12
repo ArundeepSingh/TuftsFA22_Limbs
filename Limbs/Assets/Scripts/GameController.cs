@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject myPlayer;
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
+    private MonoBehaviour PlayerAttackScript;
     public Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
     public float Health;
     public float MaxHealth = 100f;
     public bool enableArmsAnim;
+    public bool BleedingOut;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -35,10 +37,12 @@ public class GameController : MonoBehaviour
         PlayerMovementscript = myPlayer.GetComponent("PlayerMovement") as MonoBehaviour;
         LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
         CameraFollowscript = Camera.main.GetComponent("CameraFollow2DLERP") as MonoBehaviour;
+        PlayerAttackScript = myPlayer.GetComponent("MeleePlayerAttack") as MonoBehaviour;
         rb = myPlayer.GetComponent<Rigidbody2D>();
         PlayerAnimator = myPlayer.GetComponent<Animator>();
         LadderMovementscript.enabled = false;
         PlayerMovementscript.enabled = true;
+        PlayerAttackScript.enabled = false;
         ShowEyes = true;
         ShowDoor1 = false;
         HasKey2 = false;
@@ -46,6 +50,7 @@ public class GameController : MonoBehaviour
         ShowArms = true;
         CanClimb = false;
         enableArmsAnim = false;
+        BleedingOut = false;
         Health = MaxHealth; // MAX HEALTH
         DontDestroyOnLoad(Camera.main);
     }
@@ -89,6 +94,8 @@ public class GameController : MonoBehaviour
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
         CameraFollowscript.enabled = false;
         ShowTorso = false;
+        PlayerAttackScript.enabled = true;
+        BleedingOut = true;
     }
 
     public void LoadScene(string ToLoad) {
@@ -117,7 +124,7 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("TorsoScene");
                 LadderMovementscript.enabled = false;
                 PlayerMovementscript.enabled = true;
-                myPlayer.transform.position = new Vector3(0f, 0f, 0f);
+                myPlayer.transform.position = new Vector3(-15f, -20f, 0f);
                 rb.gravityScale = 0f;
                 break;
             case "Legs":
