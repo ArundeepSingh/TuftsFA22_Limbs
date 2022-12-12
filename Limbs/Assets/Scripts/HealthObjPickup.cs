@@ -17,6 +17,7 @@ public class HealthObjPickup : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
             gc.Health += 10;
+            if (gc.Health > gc.MaxHealth) gc.Health = gc.MaxHealth;
         }
     }
 }

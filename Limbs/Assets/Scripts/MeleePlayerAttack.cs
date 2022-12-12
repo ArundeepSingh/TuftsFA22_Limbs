@@ -11,12 +11,19 @@ public class MeleePlayerAttack : MonoBehaviour {
    private float nextAttackTime = 0f;
    public int attackDamage = 1000;
    public LayerMask enemyLayers;
+   public GameObject ShowAttackCircle;
+
+   void Awake(){
+      ShowAttackCircle.SetActive(false);
+   }
 
    void Update(){
       if (Time.time >= nextAttackTime){
+         ShowAttackCircle.SetActive(false);
          if (Input.GetKeyDown(KeyCode.Space)){
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;
+            ShowAttackCircle.SetActive(true);
          }
       }
     }
