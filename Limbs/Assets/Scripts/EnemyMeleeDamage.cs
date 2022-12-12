@@ -16,6 +16,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        }
 
        public void TakeDamage(int damage){
+              Debug.Log("enemy is taking damage");
               currentHealth -= damage;
               //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 1f);
               //StartCoroutine(ResetColor());

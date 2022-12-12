@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public GameObject myPlayer;
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
-    private MonoBehaviour PunchScript;
     public Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
     private Rigidbody2D rb;
@@ -35,12 +34,10 @@ public class GameController : MonoBehaviour
         PlayerMovementscript = myPlayer.GetComponent("PlayerMovement") as MonoBehaviour;
         LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
         CameraFollowscript = Camera.main.GetComponent("CameraFollow2DLERP") as MonoBehaviour;
-        PunchScript = myPlayer.GetComponent("Punch") as MonoBehaviour;
         rb = myPlayer.GetComponent<Rigidbody2D>();
         PlayerAnimator = myPlayer.GetComponent<Animator>();
         LadderMovementscript.enabled = false;
         PlayerMovementscript.enabled = true;
-        PunchScript.enabled = false;
         ShowEyes = true;
         ShowDoor1 = false;
         HasKey2 = false;
@@ -53,7 +50,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame() {
         // POSITION FOR TESTING
-        PlayerPos = new Vector3(-14.5f, -5f, 0f);
+        PlayerPos = new Vector3(-14.5f, -3f, 0f);
         // POSITION FOR FINAL GAME
         //PlayerPos = new Vector3(20f, -7.5f, 0f);
         Destroy(MenuGraphics);
@@ -116,7 +113,6 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("TorsoScene");
                 LadderMovementscript.enabled = false;
                 PlayerMovementscript.enabled = true;
-                PunchScript.enabled = true;
                 myPlayer.transform.position = new Vector3(0f, 0f, 0f);
                 rb.gravityScale = 0f;
                 break;
