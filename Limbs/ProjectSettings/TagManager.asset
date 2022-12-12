@@ -12,6 +12,7 @@ TagManager:
   - Platforms
   - Torso
   - HealthBar
+  - enemyShooter
   layers:
   - Default
   - TransparentFX
