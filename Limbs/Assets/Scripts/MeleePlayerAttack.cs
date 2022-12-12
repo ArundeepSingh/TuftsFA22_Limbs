@@ -12,10 +12,15 @@ public class MeleePlayerAttack : MonoBehaviour {
    public int attackDamage = 1000;
    public LayerMask enemyLayers;
    public GameObject ShowAttackCircle;
+   private SpriteRenderer CircleRenderer;
+
 
    void Awake(){
       ShowAttackCircle.SetActive(false);
+      CircleRenderer = ShowAttackCircle.GetComponent<SpriteRenderer>();
    }
+
+    
 
    void Update(){
       if (Time.time >= nextAttackTime){
@@ -24,9 +29,22 @@ public class MeleePlayerAttack : MonoBehaviour {
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;
             ShowAttackCircle.SetActive(true);
+            Color tmp = ShowAttackCircle.GetComponent<SpriteRenderer>().color;
+            tmp.a = 1f;
+            ShowAttackCircle.GetComponent<SpriteRenderer>().color = tmp;
          }
       }
     }
+
+   void FixedUpdate() {
+      if (ShowAttackCircle.GetComponent<SpriteRenderer>().color.a > 0f) {
+         Color tmp = ShowAttackCircle.GetComponent<SpriteRenderer>().color;
+         tmp.a -= Time.deltaTime;
+         Debug.Log(Time.deltaTime);
+         ShowAttackCircle.GetComponent<SpriteRenderer>().color = tmp;
+         Debug.Log(ShowAttackCircle.GetComponent<SpriteRenderer>().color.a);
+      }
+   }
 
     void Attack(){
         //animator.SetTrigger ("Attack");
