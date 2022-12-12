@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 873681204}
   - component: {fileID: 873681203}
   - component: {fileID: 873681202}
+  - component: {fileID: 873681206}
+  - component: {fileID: 873681205}
   m_Layer: 0
   m_Name: FinalBoss
   m_TagString: Untagged
@@ -288,6 +290,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873681205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873681201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3989fec0bc997c74da201d8d3de7d31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 100
+--- !u!114 &873681206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873681201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e962979648ebb8d47b3a1d6710bccada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  rb2D: {fileID: 0}
+  speed: 4
+  damage: 10
+  EnemyLives: 3
+  attackRange: 10
+  isAttacking: 0
 --- !u!1 &1049777686
 GameObject:
   m_ObjectHideFlags: 0
