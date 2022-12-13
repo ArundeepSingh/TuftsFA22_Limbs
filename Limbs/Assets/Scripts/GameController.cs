@@ -142,6 +142,7 @@ public class GameController : MonoBehaviour
             case "BossScene":
                 CameraDragScript.enabled = false;
                 CameraFollowscript.enabled = true;
+                myPlayer.transform.position = new Vector3(0f, -13f, 0f);
                 SceneManager.LoadScene("BossScene");
                 break;
             case "LoseScene":
