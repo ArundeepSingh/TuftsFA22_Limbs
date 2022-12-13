@@ -24,6 +24,7 @@ public class EnemyProjectile : MonoBehaviour {
        }
 
        void Update () {
+
               transform.position = Vector2.MoveTowards (transform.position, target, speed * Time.deltaTime);
        }
 

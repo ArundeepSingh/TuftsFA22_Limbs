@@ -38,7 +38,7 @@ public class BossHealthBar : MonoBehaviour {
 
       void FixedUpdate () {
             float cur_health = DamageScript.currentHealth;
-            Debug.Log("enemy cur health " + cur_health);
+            //Debug.Log("enemy cur health " + cur_health);
             healthBar.fillAmount = cur_health/ max_health;
             //turn red at low health:
             if (cur_health < 0.3f * max_health){
