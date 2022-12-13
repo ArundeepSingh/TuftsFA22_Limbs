@@ -15,8 +15,7 @@ public class GameController : MonoBehaviour
     private Rigidbody2D rb;
     public Canvas canvas;
     public GameObject MenuGraphics;
-    public bool ShowDoor1;
-    public bool ShowTorso;
+    public bool ShowDoor1, ShowTorso;
     public bool ShowEyes;
     public bool HasKey2;
     public bool ShowArms;
@@ -24,6 +23,8 @@ public class GameController : MonoBehaviour
     private Animator PlayerAnimator;
     public float Health;
     public float MaxHealth = 100f;
+    public float BossHealth;
+    public float BossMaxHealth = 200f;
     public bool enableArmsAnim;
     public bool BleedingOut;
 
@@ -51,7 +52,8 @@ public class GameController : MonoBehaviour
         CanClimb = false;
         enableArmsAnim = false;
         BleedingOut = false;
-        Health = MaxHealth; // MAX HEALTH
+        Health = MaxHealth; 
+        BossHealth = BossMaxHealth; // MAX HEALTH
         DontDestroyOnLoad(Camera.main);
     }
 
