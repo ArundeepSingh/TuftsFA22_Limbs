@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039265434220198205, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
       propertyPath: attackDamage
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1039265434220198205, guid: 55b99aca965094362842bd9dd2c40a7f, type: 3}
       propertyPath: ShowAttackCircle

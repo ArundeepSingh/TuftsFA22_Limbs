@@ -9,12 +9,11 @@ public class MeleePlayerAttack : MonoBehaviour {
    public float attackRange = 0.5f;
    public float attackRate = 2f;
    private float nextAttackTime = 0f;
-   public int attackDamage = 1000;
+   private int attackDamage = 40;
    public LayerMask enemyLayers;
    public GameObject ShowAttackCircle;
    private SpriteRenderer CircleRenderer;
-
-
+   
    void Awake(){
       ShowAttackCircle.SetActive(false);
       CircleRenderer = ShowAttackCircle.GetComponent<SpriteRenderer>();
@@ -40,9 +39,7 @@ public class MeleePlayerAttack : MonoBehaviour {
       if (ShowAttackCircle.GetComponent<SpriteRenderer>().color.a > 0f) {
          Color tmp = ShowAttackCircle.GetComponent<SpriteRenderer>().color;
          tmp.a -= Time.deltaTime;
-         Debug.Log(Time.deltaTime);
          ShowAttackCircle.GetComponent<SpriteRenderer>().color = tmp;
-         Debug.Log(ShowAttackCircle.GetComponent<SpriteRenderer>().color.a);
       }
    }
 

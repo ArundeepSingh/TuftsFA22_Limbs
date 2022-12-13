@@ -6,8 +6,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
        private Renderer rend;
        public Animator anim;
     //    public GameObject healthLoot;
-       public int maxHealth = 100;
-       public int currentHealth;
+       public float maxHealth = 100;
+       public float currentHealth;
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
