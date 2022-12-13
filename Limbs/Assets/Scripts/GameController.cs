@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
     private MonoBehaviour PlayerAttackScript;
-    public Vector3 PlayerPos;
     private MonoBehaviour CameraFollowscript;
+    private MonoBehaviour CameraDragScript;
+    public Vector3 PlayerPos;
     private Rigidbody2D rb;
     public Canvas canvas;
     public GameObject MenuGraphics;
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour
         LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
         CameraFollowscript = Camera.main.GetComponent("CameraFollow2DLERP") as MonoBehaviour;
         PlayerAttackScript = myPlayer.GetComponent("MeleePlayerAttack") as MonoBehaviour;
+        CameraDragScript = Camera.main.GetComponent("CameraDrag") as MonoBehaviour;
         rb = myPlayer.GetComponent<Rigidbody2D>();
         PlayerAnimator = myPlayer.GetComponent<Animator>();
         LadderMovementscript.enabled = false;
@@ -133,7 +135,8 @@ public class GameController : MonoBehaviour
                 BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
                 myPlayer.transform.position = new Vector3(-13f, -27f, 0f);
-
+                CameraFollowscript.enabled = false;
+                CameraDragScript.enabled = true;
                 break;
             case "Boss":
                 SceneManager.LoadScene("BossScene");
