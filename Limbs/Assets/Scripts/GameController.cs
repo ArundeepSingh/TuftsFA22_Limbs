@@ -131,6 +131,8 @@ public class GameController : MonoBehaviour
                 break;
             case "Legs":
                 SceneManager.LoadScene("LegsScene");
+                myPlayer.transform.position = new Vector3(16f, -16f, 0f);
+
                 break;
             case "Boss":
                 SceneManager.LoadScene("BossScene");

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496180383}
   - component: {fileID: 496180384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FinalBossArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 730691657}
   - component: {fileID: 730691659}
   - component: {fileID: 730691658}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 783771082}
   - component: {fileID: 783771085}
   - component: {fileID: 783771084}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: HealthBar
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 873681202}
   - component: {fileID: 873681206}
   - component: {fileID: 873681205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FinalBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.012889, y: 5.5954037}
+  m_Size: {x: 7, y: 7}
   m_EdgeRadius: 0
 --- !u!50 &873681203
 Rigidbody2D:
@@ -16980,7 +16980,7 @@ GameObject:
   - component: {fileID: 1469919208}
   - component: {fileID: 1469919207}
   - component: {fileID: 1469919206}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
