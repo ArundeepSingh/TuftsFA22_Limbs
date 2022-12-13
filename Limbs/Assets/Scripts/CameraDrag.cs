@@ -8,6 +8,7 @@ public class CameraDrag : MonoBehaviour
     public float camSpeed = 4.0f;
     public float max_x = 40f;
     public float pos_x;
+    private float rate = 2;
 
     void Start() {
         pos_x = -16f;
@@ -15,7 +16,7 @@ public class CameraDrag : MonoBehaviour
 
     void FixedUpdate()
     {   
-        pos_x += Time.fixedDeltaTime;
+        pos_x += rate * Time.fixedDeltaTime;
         Vector2 newpos = new Vector2 (pos_x, player.transform.position.y);
         Debug.Log(newpos);
         Vector2 pos =   

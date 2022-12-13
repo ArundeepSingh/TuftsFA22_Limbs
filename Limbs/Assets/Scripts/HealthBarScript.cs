@@ -27,6 +27,13 @@ public class HealthBarScript : MonoBehaviour {
 
 // this timer is just to test damage. Comment-out when no longer needed
       void FixedUpdate () {
+            
+            // FOR TESTING
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                  gc.Health = 0;
+            }
+
             if (gc.BleedingOut) {
                   gc.Health -= 1f * Time.deltaTime;
                   //Debug.Log(gc.Health);
@@ -57,9 +64,11 @@ public class HealthBarScript : MonoBehaviour {
 
       public void Die(){
             Debug.Log("You Died So Much");
+            Debug.Log(SceneManager.GetActiveScene().name);
            // death stuff. change scene? how about a particle effect?
             //Vector3 objPos = this.transform.position
             //Instantiate(deathEffect, objPos, Quaternion.identity) as GameObject;
-           SceneManager.LoadScene("LoseScene");
+            gc.LastScene = SceneManager.GetActiveScene().name;
+            gc.LoadScene("LoseScene");
       }
 }
