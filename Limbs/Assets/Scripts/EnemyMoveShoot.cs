@@ -7,7 +7,7 @@ public class EnemyMoveShoot : MonoBehaviour {
       //public Animator anim;
        public float speed = 2f;
        public float stoppingDistance = 4f; // when enemy stops moving towards player
-       public float retreatDistance = 3f; // when enemy moves away from approaching player
+       private float retreatDistance = 0f; // when enemy moves away from approaching player
        private float timeBtwShots;
        public float startTimeBtwShots = 2;
        public GameObject projectile;

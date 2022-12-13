@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour {
 
-       public GameController gameHandlerObj;
+       private GameController gameHandlerObj;
        public int damage =1;
        public float speed = 10f;
        private Transform playerTrans;

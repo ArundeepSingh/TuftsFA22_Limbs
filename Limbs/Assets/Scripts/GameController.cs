@@ -132,7 +132,7 @@ public class GameController : MonoBehaviour
             case "Legs":
                 BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
-                myPlayer.transform.position = new Vector3(16f, -16f, 0f);
+                myPlayer.transform.position = new Vector3(-13f, -27f, 0f);
 
                 break;
             case "Boss":

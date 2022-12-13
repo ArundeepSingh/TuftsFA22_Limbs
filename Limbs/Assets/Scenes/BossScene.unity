@@ -667,11 +667,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   stoppingDistance: 4
-  retreatDistance: 3
   startTimeBtwShots: 2
   projectile: {fileID: 1454050858565592544, guid: c7bd9296621b38345a0e2beef2e7c2bf, type: 3}
   EnemyLives: 30
-  attackRange: 10
+  attackRange: 30
   isAttacking: 0
 --- !u!1 &1049777686
 GameObject:
