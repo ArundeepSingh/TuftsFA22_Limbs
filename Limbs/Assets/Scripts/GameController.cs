@@ -130,6 +130,7 @@ public class GameController : MonoBehaviour
                 rb.gravityScale = 0f;
                 break;
             case "Legs":
+                BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
                 myPlayer.transform.position = new Vector3(16f, -16f, 0f);
 
