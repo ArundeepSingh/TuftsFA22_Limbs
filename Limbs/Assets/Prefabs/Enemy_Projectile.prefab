@@ -94,11 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580f4631b6a1e4241a567ac5b096c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandlerObj: {fileID: 0}
   damage: 1
-  speed: 10
-  hitEffectAnim: {fileID: 0}
-  SelfDestructTime: 2
+  speed: 20
+  SelfDestructTime: 0.5
 --- !u!1 &8768080831801507675
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,24 +28,14 @@ public class HealthBarScript : MonoBehaviour {
 // this timer is just to test damage. Comment-out when no longer needed
       void FixedUpdate () {
             if (gc.BleedingOut) {
-                  TakeDamage(1f * Time.deltaTime);
+                  gc.Health -= 1f * Time.deltaTime;
                   //Debug.Log(gc.Health);
             }
-            healthBar.fillAmount = gc.Health / gc.MaxHealth;
+            
             if (HitEnemyScript.GotHit) {
-                  TakeDamage(5f);
+                  gc.Health -=  5f;
                   HitEnemyScript.GotHit = false;
             }
-      }
-
-      public void SetColor(Color newColor){
-            healthBar.GetComponent<Image>().color = newColor;
-      }
-
-      public void TakeDamage (float amount){
-            gc.Health -= amount;
-            healthBar.fillAmount = gc.Health / gc.MaxHealth;
-            //turn red at low health:
             if (gc.Health < 0.3f * gc.MaxHealth){
                   if (gc.Health <= 0){
                         SetColor(Color.white);
@@ -58,6 +48,11 @@ public class HealthBarScript : MonoBehaviour {
             else {
                   SetColor(healthyColor);
             }
+            healthBar.fillAmount = gc.Health / gc.MaxHealth;
+      }
+
+      public void SetColor(Color newColor){
+            healthBar.GetComponent<Image>().color = newColor;
       }
 
       public void Die(){
