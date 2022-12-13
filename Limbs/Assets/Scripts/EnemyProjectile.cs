@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour {
 
        private GameController gameHandlerObj;
-       public int damage =1;
        public float speed = 10f;
        private Transform playerTrans;
        private Vector2 target;
     //    public GameObject hitEffectAnim;
        public float SelfDestructTime = 2.0f;
+       public float damage;
 
        void Start() {
              //NOTE: transform gets location, but we need Vector2 for direction, so we can use MoveTowards.
@@ -31,7 +31,7 @@ public class EnemyProjectile : MonoBehaviour {
        //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
        void OnTriggerEnter2D(Collider2D collision){
               if (collision.gameObject.tag == "Player") {
-                     gameHandlerObj.Health -= 10;
+                     gameHandlerObj.Health -= damage;
               }
               if (collision.gameObject.tag != "enemyShooter") {
                     //  GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);

@@ -465,7 +465,7 @@ MonoBehaviour:
   new_part: {fileID: 2064767993}
   new_sprite: {fileID: 801875022}
   BigLight: {fileID: 29444673}
-  sceneToLoad: Start
+  sceneToLoad: StartScene
 --- !u!4 &903425519
 Transform:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     public float BossMaxHealth = 200f;
     public bool enableArmsAnim;
     public bool BleedingOut;
+    public string LastScene;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -64,8 +65,7 @@ public class GameController : MonoBehaviour
         PlayerPos = new Vector3(-14.5f, -3f, 0f);
         // POSITION FOR FINAL GAME
         //PlayerPos = new Vector3(20f, -7.5f, 0f);
-        Destroy(MenuGraphics);
-        LoadScene("Start");
+        LoadScene("StartScene");
     }
 
     public void SwitchSceneAfterEyesPickup() {
@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour
         Debug.Log(PlayerPos);
         SceneManager.LoadScene("UnlockAnimationEyes");
         myPlayer.gameObject.SetActive(false);
+        Debug.Log("my player is active?");
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
         CameraFollowscript.enabled = false;
         ShowEyes = false;
@@ -111,10 +112,10 @@ public class GameController : MonoBehaviour
         Camera.main.transform.position = CameraPos;
         switch(ToLoad) 
             {
-            case "Start":
+            case "StartScene":
                 SceneManager.LoadScene("StartScene");
                 break;
-            case "Arms":
+            case "ArmsScene":
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
@@ -124,22 +125,27 @@ public class GameController : MonoBehaviour
                 //     PlayerAnimator.SetBool(parameter.name, false);            
                 // }
                 break;
-            case "Torso":
+            case "TorsoScene":
                 SceneManager.LoadScene("TorsoScene");
                 LadderMovementscript.enabled = false;
                 PlayerMovementscript.enabled = true;
                 myPlayer.transform.position = new Vector3(-15f, -20f, 0f);
                 rb.gravityScale = 0f;
                 break;
-            case "Legs":
+            case "LegsScene":
                 BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
                 myPlayer.transform.position = new Vector3(-13f, -27f, 0f);
                 CameraFollowscript.enabled = false;
                 CameraDragScript.enabled = true;
                 break;
-            case "Boss":
+            case "BossScene":
+                CameraDragScript.enabled = false;
+                CameraFollowscript.enabled = true;
                 SceneManager.LoadScene("BossScene");
+                break;
+            case "LoseScene":
+                SceneManager.LoadScene("LoseScene");
                 break;
             default:
                 break;

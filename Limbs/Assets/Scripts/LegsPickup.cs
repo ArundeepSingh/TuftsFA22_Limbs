@@ -17,7 +17,7 @@ public class LegsPickup : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
-            gc.LoadScene("Legs");
+            gc.LoadScene("LegsScene");
         }
     }
 }

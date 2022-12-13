@@ -583,7 +583,7 @@ MonoBehaviour:
   new_part: {fileID: 274972914}
   new_sprite: {fileID: 2118992017}
   BigLight: {fileID: 1210728240}
-  sceneToLoad: Arms
+  sceneToLoad: ArmsScene
 --- !u!4 &1724841387
 Transform:
   m_ObjectHideFlags: 0

@@ -240,7 +240,7 @@ MonoBehaviour:
   new_part: {fileID: 1594209011}
   new_sprite: {fileID: 186341293}
   BigLight: {fileID: 1339226814}
-  sceneToLoad: Torso
+  sceneToLoad: TorsoScene
 --- !u!4 &371319688
 Transform:
   m_ObjectHideFlags: 0

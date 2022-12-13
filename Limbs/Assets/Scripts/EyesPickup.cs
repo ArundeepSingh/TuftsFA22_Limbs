@@ -22,6 +22,7 @@ public class EyesPickup : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
+            Debug.Log("on eyes trigger");
             gc.SwitchSceneAfterEyesPickup();
         }
     }

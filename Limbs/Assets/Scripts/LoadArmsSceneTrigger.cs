@@ -17,7 +17,7 @@ public class LoadArmsSceneTrigger : MonoBehaviour
             //gc.PlayerPos = new Vector3(20f, -14f, 0f);
             // TESTING POS
             gc.PlayerPos = new Vector3(25f, -48f, 0f);
-            gc.LoadScene("Arms");          
+            gc.LoadScene("ArmsScene");          
         }
     }
 }
