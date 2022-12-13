@@ -37,8 +37,8 @@ public class UnlockNewPart : MonoBehaviour
             BigLight.intensity -= 2f;
         }
         
-        // 11 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
-        if (total_time > 0.2f) {
+        // 8 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
+        if (total_time > 8f) {
             gc.LoadScene(sceneToLoad);
         }
     }

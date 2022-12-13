@@ -8,7 +8,7 @@ public class CameraDrag : MonoBehaviour
     public float camSpeed = 4.0f;
     public float max_x = 40f;
     public float pos_x;
-    private float rate = 2;
+    public float rate = 2;
 
     void Start() {
         pos_x = -16f;
@@ -18,7 +18,6 @@ public class CameraDrag : MonoBehaviour
     {   
         pos_x += rate * Time.fixedDeltaTime;
         Vector2 newpos = new Vector2 (pos_x, player.transform.position.y);
-        Debug.Log(newpos);
         Vector2 pos =   
                 Vector2
                     .Lerp((Vector2) transform.position,

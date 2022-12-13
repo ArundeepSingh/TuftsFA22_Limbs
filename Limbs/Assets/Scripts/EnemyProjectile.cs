@@ -33,7 +33,13 @@ public class EnemyProjectile : MonoBehaviour {
               if (collision.gameObject.tag == "Player") {
                      gameHandlerObj.Health -= damage;
               }
-              if (collision.gameObject.tag != "enemyShooter") {
+              
+              if (collision.gameObject.tag == "IgnoreProj"){
+                     Debug.Log("hit ignore tag");
+                     Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+              }
+
+              if (collision.gameObject.tag != "enemyShooter" && collision.gameObject.tag != "IgnoreProj") {
                     //  GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                     //  Destroy (animEffect, 0.5f);
                      Destroy (gameObject);

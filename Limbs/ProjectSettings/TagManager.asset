@@ -13,6 +13,7 @@ TagManager:
   - Torso
   - HealthBar
   - enemyShooter
+  - IgnoreProj
   layers:
   - Default
   - TransparentFX
