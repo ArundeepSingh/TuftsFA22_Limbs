@@ -62,5 +62,6 @@ public class BossHealthBar : MonoBehaviour {
 
       public void BossDie(){
             Debug.Log("You Win");
+            SceneManager.LoadScene("WinScene");
       }
 }
