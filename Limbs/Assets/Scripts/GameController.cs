@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     public bool HasKey2;
     public bool ShowArms;
     public bool CanClimb;
-    private Animator PlayerAnimator;
+    public Animator PlayerAnimator;
     public float Health;
     public float MaxHealth = 100f;
     public float BossHealth;
@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
         CameraDragScript = Camera.main.GetComponent("CameraDrag") as MonoBehaviour;
         rb = myPlayer.GetComponent<Rigidbody2D>();
         PlayerAnimator = myPlayer.GetComponent<Animator>();
+        PlayerAnimator.keepAnimatorControllerStateOnDisable = true;
         LadderMovementscript.enabled = false;
         PlayerMovementscript.enabled = true;
         PlayerAttackScript.enabled = false;
@@ -89,7 +90,7 @@ public class GameController : MonoBehaviour
         CameraFollowscript.enabled = false;
         ShowArms = false;
         CanClimb = true;
-        PlayerAnimator.SetBool("armwalk", true);
+        // PlayerAnimator.SetBool("armwalk", true);
     }
 
     public void SwitchSceneAfterTorsoPickup() {
@@ -120,7 +121,7 @@ public class GameController : MonoBehaviour
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
                 // LINE BELOW STARTS ARMWALK ANIMATION RIGHT WHEN SCENE LOADS
-                PlayerAnimator.SetBool("armwalk", enableArmsAnim);
+                // PlayerAnimator.SetBool("armwalk", enableArmsAnim);
                 // foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
                 //     PlayerAnimator.SetBool(parameter.name, false);            
                 // }

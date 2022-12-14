@@ -23,6 +23,7 @@ public class ArmsPickup : MonoBehaviour
             gc.enableArmsAnim = true;
             LadderColliders.SetActive(true);
             gc.SwitchSceneAfterArmsPickup();
+            gc.PlayerAnimator.SetBool("armwalk", true);
         }
     }
 }

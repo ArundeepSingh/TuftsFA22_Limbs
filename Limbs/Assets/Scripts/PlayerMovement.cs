@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
             playerLight.pointLightInnerRadius += 10;
         } else if (other.gameObject.tag == "Arms") {
             Debug.Log("Progressing player state from arms");
-            PlayerAnimator.SetBool("armwalk", true);
             psd.ProgressPlayerState();
         } else if (other.gameObject.tag == "Torso") {
             Debug.Log("Progressing to Torso");
