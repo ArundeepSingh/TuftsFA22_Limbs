@@ -772,6 +772,7 @@ MonoBehaviour:
   camSpeed: 4
   max_x: 40
   pos_x: 0
+  rate: 2
 --- !u!1 &535263486
 GameObject:
   m_ObjectHideFlags: 0

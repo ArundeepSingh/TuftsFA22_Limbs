@@ -59,6 +59,19 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
+            if (movement.x == 1) PlayerAnimator.SetBool("armright", true);
+            else if (movement.x == -1) PlayerAnimator.SetBool("armleft", true);
+            else if (movement.y == 1) PlayerAnimator.SetBool("armup", true);
+            else if (movement.y == -1) PlayerAnimator.SetBool("armdown", true);
+            else {
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
+                    if (parameter.name == "armwalk") continue;        
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+            }
+        }
     }
 
     void FixedUpdate()
