@@ -38,7 +38,7 @@ public class UnlockNewPart : MonoBehaviour
         }
         
         // 8 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
-        if (total_time > 8f) {
+        if (total_time > 0.5f) {
             gc.LoadScene(sceneToLoad);
         }
     }

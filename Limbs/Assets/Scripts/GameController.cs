@@ -137,12 +137,8 @@ public class GameController : MonoBehaviour
                 BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
                 myPlayer.transform.position = new Vector3(-13f, -27f, 0f);
-                CameraFollowscript.enabled = false;
-                CameraDragScript.enabled = true;
                 break;
             case "BossScene":
-                CameraDragScript.enabled = false;
-                CameraFollowscript.enabled = true;
                 myPlayer.transform.position = new Vector3(0f, -13f, 0f);
                 SceneManager.LoadScene("BossScene");
                 break;
