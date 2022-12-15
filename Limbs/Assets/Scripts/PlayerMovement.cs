@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        // If you have the head, animate based on direction.
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
             if (movement.x == 1) PlayerAnimator.SetBool("right", true);
             else if (movement.x == -1) PlayerAnimator.SetBool("left", true);
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // If you have arms, animate based on direction
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
             if (movement.x == 1) PlayerAnimator.SetBool("armright", true);
             else if (movement.x == -1) PlayerAnimator.SetBool("armleft", true);
@@ -68,6 +70,21 @@ public class PlayerMovement : MonoBehaviour
             else {
                 foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
                     if (parameter.name == "armwalk") continue;        
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+            }
+        }
+
+
+        // If you have torso, animate based on direction
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Torso) {
+            if (movement.x == 1) PlayerAnimator.SetBool("torsoright", true);
+            else if (movement.x == -1) PlayerAnimator.SetBool("torsoleft", true);
+            else if (movement.y == 1) PlayerAnimator.SetBool("torsoup", true);
+            else if (movement.y == -1) PlayerAnimator.SetBool("torsodown", true);
+            else {
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
+                    if (parameter.name == "armwalk" || parameter.name == "torsoidle") continue;        
                     PlayerAnimator.SetBool(parameter.name, false);            
                 }
             }

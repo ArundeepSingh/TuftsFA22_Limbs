@@ -46,6 +46,8 @@ public class LadderMovement : MonoBehaviour
             }
         }
     
+        // If you have arms, are on the ladder, and moving horizontally,
+        // start swing animation based on direction.
         if (psd.currPlayerState == Arms && isLadder && Mathf.Abs(horizontal) > 0f) {
             if (horizontal == 1) PlayerAnimator.SetTrigger("swingright");
             else PlayerAnimator.SetTrigger("swingleft");

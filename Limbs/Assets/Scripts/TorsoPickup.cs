@@ -20,6 +20,7 @@ public class TorsoPickup : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
             gc.SwitchSceneAfterTorsoPickup();
+            gc.PlayerAnimator.SetBool("torsoidle", true);
         }
     }
 }
