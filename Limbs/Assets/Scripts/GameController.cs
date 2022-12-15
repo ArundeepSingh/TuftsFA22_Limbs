@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public bool enableArmsAnim;
     public bool BleedingOut;
     public string LastScene;
+    public int HasKeys;
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour
         BleedingOut = false;
         Health = MaxHealth; 
         BossHealth = BossMaxHealth; // MAX HEALTH
+        HasKeys = 0;
         DontDestroyOnLoad(Camera.main);
     }
 
