@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
         // If you have torso, animate based on direction
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Torso) {
             if (movement.x == 1) PlayerAnimator.SetBool("torsoright", true);
@@ -89,6 +88,21 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+    
+        // If you have the entire body, animate based on direction
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Legs) {
+            if (movement.x == 1) PlayerAnimator.SetBool("bodyright", true);
+            else if (movement.x == -1) PlayerAnimator.SetBool("bodyleft", true);
+            else if (movement.y == 1) PlayerAnimator.SetBool("bodyup", true);
+            else if (movement.y == -1) PlayerAnimator.SetBool("bodydown", true);
+            else {
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
+                    if (parameter.name == "armwalk" || parameter.name == "torsoidle" || parameter.name == "bodyidle") continue;        
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+            }
+        }
+    
     }
 
     void FixedUpdate()
@@ -109,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
             psd.ProgressPlayerState();
         } else if (other.gameObject.tag == "Torso") {
             Debug.Log("Progressing to Torso");
+            psd.ProgressPlayerState();
+        } else if (other.gameObject.tag == "Legs") {
             psd.ProgressPlayerState();
         }
     }
