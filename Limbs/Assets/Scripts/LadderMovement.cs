@@ -44,7 +44,23 @@ public class LadderMovement : MonoBehaviour
             }
         }
 
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms 
+            && isLadder && !isClimbing) {
+                Debug.Log("have arms and on ladder");
+                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
+                    if (parameter.name == "armwalk") continue;
+                    PlayerAnimator.SetBool(parameter.name, false);            
+                }
+                PlayerAnimator.SetBool("onladder", true);
+        } else if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms 
+                    && isClimbing) {
+                Debug.Log("have arms and on ladder and climbing");
+            foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
+                if (parameter.name == "armwalk" || parameter.name == "onladder") continue;
+                PlayerAnimator.SetBool(parameter.name, false);            
+            }
+            PlayerAnimator.SetBool("climbing", true);
+        } else if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
             if (horizontal == 1) {
                 PlayerAnimator.SetBool("armright", true);
                 Debug.Log("Moving with arms right, arm walk right is" + PlayerAnimator.GetBool("armright"));
