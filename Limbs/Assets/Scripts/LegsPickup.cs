@@ -18,6 +18,7 @@ public class LegsPickup : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
             gc.LoadScene("LegsScene");
+            gc.PlayerAnimator.SetBool("bodyidle", true);
         }
     }
 }
