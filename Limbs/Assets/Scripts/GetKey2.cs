@@ -14,7 +14,6 @@ public class GetKey2 : MonoBehaviour
     }
 
     public void OnTriggerEnter2D (Collider2D other) {
-        Debug.Log("key collided with something");
         if (other.gameObject.tag == "Player"){
             Debug.Log("collided with key");
             Destroy(gameObject);

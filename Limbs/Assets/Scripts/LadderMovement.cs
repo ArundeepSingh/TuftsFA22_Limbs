@@ -14,6 +14,7 @@ public class LadderMovement : MonoBehaviour
     private float TimeBetweenJumps = 0f;
     private Animator PlayerAnimator;
     private PlayerStateDevelopment psd;
+    private PlayerStateDevelopment.PlayerState Arms = PlayerStateDevelopment.PlayerState.Arms;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -34,6 +35,7 @@ public class LadderMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
 
+        // Depending on direction of movement, play the correct head roll animation
         if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
             if (horizontal == 1) PlayerAnimator.SetBool("right", true);
             else if (horizontal == -1) PlayerAnimator.SetBool("left", true);
@@ -43,27 +45,33 @@ public class LadderMovement : MonoBehaviour
                 }
             }
         }
-
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms 
+    
+        if (psd.currPlayerState == Arms && isLadder && Mathf.Abs(horizontal) > 0f) {
+            if (horizontal == 1) PlayerAnimator.SetTrigger("swingright");
+            else PlayerAnimator.SetTrigger("swingleft");
+        } else if (psd.currPlayerState == Arms 
             && isLadder && !isClimbing) {
-                Debug.Log("have arms and on ladder");
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
-                    if (parameter.name == "armwalk") continue;
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
-                PlayerAnimator.SetBool("onladder", true);
-        } else if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms 
+            // If you are on the ladder and not climbing, then set everything
+            // besides armwalk and onladder to false.
+            foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
+                if (parameter.name == "armwalk") continue;
+                PlayerAnimator.SetBool(parameter.name, false);            
+            }
+            PlayerAnimator.SetBool("onladder", true);
+        } else if (psd.currPlayerState == Arms 
                     && isClimbing) {
-                Debug.Log("have arms and on ladder and climbing");
+            // If you have arms and are climbing, set everything besides armwalk,
+            // onladder, and climbing to false.
             foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {
                 if (parameter.name == "armwalk" || parameter.name == "onladder") continue;
                 PlayerAnimator.SetBool(parameter.name, false);            
             }
             PlayerAnimator.SetBool("climbing", true);
-        } else if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
+        } else if (psd.currPlayerState == Arms && !isLadder) {
+            // If you have arms and are not on a ladder, play the normal armwalking
+            // animations depending on direction.
             if (horizontal == 1) {
                 PlayerAnimator.SetBool("armright", true);
-                Debug.Log("Moving with arms right, arm walk right is" + PlayerAnimator.GetBool("armright"));
             } else if (horizontal == -1) PlayerAnimator.SetBool("armleft", true);
             else {
                 foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {  
