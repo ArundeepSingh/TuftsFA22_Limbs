@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,6 +69,42 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +114,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 305
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5e6ebbb3d7d9849820484c0f4dcf33
+      internalID: -1529840826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 224
+        width: 42
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2da5fb64d987824b8288da13473cb70
+      internalID: 64937650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 224
+        width: 42
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334ecbe245ac5574fa2aeb756344fcac
+      internalID: -404196962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 305
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ebf9bca6a3f464b82ffec362f9a8fd
+      internalID: 1837906006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 224
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5bff6c085b96341a052e1bff8d9936
+      internalID: 553974523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 225
+        width: 49
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c740e2a201e3a24e8d3ad782b8d81be
+      internalID: -504988146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 147
+        width: 46
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647705ee6eee2dd48b5664d63a5d55bf
+      internalID: 82628243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_7
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 144
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce856d96ed2c7ff40a7841594571ac61
+      internalID: 1564223238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_8
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 144
+        width: 45
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08274951a70e9e5408d46e2e123b7761
+      internalID: -299171669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_9
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 145
+        width: 46
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d08c05959fcb574da3ed10c4b0f2aeb
+      internalID: -1039081934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 50
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be64c58e109d78b4f83788ae011bbffc
+      internalID: 1763078613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_11
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 88
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec91122e440ea2438126cf9d4c4f81f
+      internalID: 76529948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 64
+        width: 39
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6ee0eee25e9944cb19d74d23b28f65
+      internalID: -368510272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_13
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 64
+        width: 39
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5d3e43d59b7b74481914513d7e6a51
+      internalID: -949594586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_14
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 88
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff42c00cb55bb3b41a0d466b66cf1d53
+      internalID: -1001928077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FaceArm Sprite Sheet Final Update with Punching_15
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 64
+        width: 50
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a44c012242ee5d43b373b18a467f8a3
+      internalID: 1169338368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +461,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FaceArm Sprite Sheet Final Update with Punching_5: -504988146
+      FaceArm Sprite Sheet Final Update with Punching_15: 1169338368
+      FaceArm Sprite Sheet Final Update with Punching_11: 76529948
+      FaceArm Sprite Sheet Final Update with Punching_13: -949594586
+      FaceArm Sprite Sheet Final Update with Punching_8: -299171669
+      FaceArm Sprite Sheet Final Update with Punching_6: 82628243
+      FaceArm Sprite Sheet Final Update with Punching_3: 1837906006
+      FaceArm Sprite Sheet Final Update with Punching_1: 64937650
+      FaceArm Sprite Sheet Final Update with Punching_4: 553974523
+      FaceArm Sprite Sheet Final Update with Punching_10: 1763078613
+      FaceArm Sprite Sheet Final Update with Punching_12: -368510272
+      FaceArm Sprite Sheet Final Update with Punching_14: -1001928077
+      FaceArm Sprite Sheet Final Update with Punching_0: -1529840826
+      FaceArm Sprite Sheet Final Update with Punching_7: 1564223238
+      FaceArm Sprite Sheet Final Update with Punching_9: -1039081934
+      FaceArm Sprite Sheet Final Update with Punching_2: -404196962
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
