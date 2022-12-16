@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Eyes) return;
         // Create a dictionary mapping player states to animation parameter names
         var stateToAnimParams = new Dictionary<PlayerStateDevelopment.PlayerState, (string x, string y)>
         {
