@@ -12,12 +12,13 @@ public class LegsPickup : MonoBehaviour
     void Start()
     {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
+        gameObject.SetActive(gc.ShowLegs);
     }
 
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Destroy(gameObject);
-            gc.LoadScene("LegsScene");
+            gc.SwitchSceneAfterLegsPickup();
             gc.PlayerAnimator.SetBool("bodyidle", true);
         }
     }

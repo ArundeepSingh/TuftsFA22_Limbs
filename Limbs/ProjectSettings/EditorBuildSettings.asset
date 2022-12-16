@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScene.unity
     guid: 6962f1b0a0b74c647b58a08eb464a69e
   - enabled: 1
+    path: Assets/Scenes/UnlockAnimationLegs.unity
+    guid: 3839578c1efa44dc59eec2932bfc3252
+  - enabled: 1
     path: Assets/Scenes/BossScene.unity
     guid: 5be7c34bad7b5474fa66279c39a2228e
   - enabled: 1

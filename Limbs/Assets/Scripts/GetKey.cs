@@ -5,6 +5,7 @@ using UnityEngine;
 public class GetKey : MonoBehaviour
 {
     private GameController gc;
+    public int KeyNum;
 
     // Start is called before the first frame update
     void Start()

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadTorsoSceneTrigger : MonoBehaviour
+public class PassThroughDoor : MonoBehaviour
 {
     private GameController gc;
     public GameObject NoKeyDialogue;
+    public int DoorNum;
+    public string NextScene;
 
     void Start () {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
@@ -15,11 +17,10 @@ public class LoadTorsoSceneTrigger : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
 
-            // not sure if this is the right num
-            if (gc.HasKeys >= 3) {
-                gc.LoadScene("TorsoScene");
+            if (gc.HasKeys == DoorNum) {
+                gc.LoadScene(NextScene);
             } else {
-                Debug.Log("Player doesn't have key for door 2");
+                Debug.Log("Player doesn't have key number " + DoorNum);
                 NoKeyDialogue.SetActive(true);
             }   
         }

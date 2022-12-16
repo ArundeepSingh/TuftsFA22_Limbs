@@ -18,8 +18,8 @@ public class GameController : MonoBehaviour
     public GameObject MenuGraphics;
     public bool ShowDoor1, ShowTorso;
     public bool ShowEyes;
-    public bool HasKey2;
     public bool ShowArms;
+    public bool ShowLegs;
     public bool CanClimb;
     public Animator PlayerAnimator;
     public float Health;
@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour
         PlayerMovementscript.enabled = true;
         PlayerAttackScript.enabled = false;
         ShowEyes = true;
-        ShowDoor1 = false;
-        HasKey2 = false;
         ShowTorso = true;
         ShowArms = true;
         CanClimb = false;
@@ -60,6 +58,7 @@ public class GameController : MonoBehaviour
         Health = MaxHealth; 
         BossHealth = BossMaxHealth; // MAX HEALTH
         HasKeys = 0;
+        ShowLegs = true;
         DontDestroyOnLoad(Camera.main);
     }
 
@@ -106,6 +105,17 @@ public class GameController : MonoBehaviour
         BleedingOut = true;
     }
 
+    public void SwitchSceneAfterLegsPickup() {
+        PlayerPos = myPlayer.transform.position;
+        Debug.Log(PlayerPos);
+        SceneManager.LoadScene("UnlockAnimationLegs");
+        myPlayer.gameObject.SetActive(false);
+        Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        CameraFollowscript.enabled = false;
+        ShowLegs = false;
+        // PlayerAnimator.SetBool("armwalk", true);
+    }
+
     public void LoadScene(string ToLoad) {
         myPlayer.gameObject.SetActive(true);
         myPlayer.transform.position = PlayerPos;
@@ -122,11 +132,10 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
-                // LINE BELOW STARTS ARMWALK ANIMATION RIGHT WHEN SCENE LOADS
-                // PlayerAnimator.SetBool("armwalk", enableArmsAnim);
-                // foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
-                //     PlayerAnimator.SetBool(parameter.name, false);            
-                // }
+                // REAL POS
+                //gc.PlayerPos = new Vector3(20f, -14f, 0f);
+                // TESTING POS
+                myPlayer.transform.position = new Vector3(25f, -48f, 0f);
                 break;
             case "TorsoScene":
                 SceneManager.LoadScene("TorsoScene");

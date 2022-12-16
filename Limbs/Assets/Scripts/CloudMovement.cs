@@ -16,6 +16,7 @@ public class CloudMovement : MonoBehaviour
 
 
     void Start() {
+        
         player = GameObject.FindWithTag("Player");
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         movement_speed = 0.5f;
@@ -24,6 +25,11 @@ public class CloudMovement : MonoBehaviour
 
     void FixedUpdate()
     {   
+        // start the cloud movement after the player gets the legs
+        if (gc.ShowLegs) {
+            movement_speed = 0.25f;
+        }
+        Debug.Log(gc.ShowLegs);
         Debug.Log("movement speed: " + movement_speed);
         float change_pos_x = movement_speed * Time.deltaTime;
         cur_pos_x += change_pos_x;
