@@ -48,61 +48,32 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // If you have the head, animate based on direction.
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Head) {
-            if (movement.x == 1) PlayerAnimator.SetBool("right", true);
-            else if (movement.x == -1) PlayerAnimator.SetBool("left", true);
-            else if (movement.y == 1) PlayerAnimator.SetBool("up", true);
-            else if (movement.y == -1) PlayerAnimator.SetBool("down", true);
-            else {
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {            
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
-            }
-        }
+        // Create a dictionary mapping player states to animation parameter names
+        var stateToAnimParams = new Dictionary<PlayerStateDevelopment.PlayerState, (string x, string y)>
+        {
+            { PlayerStateDevelopment.PlayerState.Head, ("right", "up") },
+            { PlayerStateDevelopment.PlayerState.Arms, ("armright", "armup") },
+            { PlayerStateDevelopment.PlayerState.Torso, ("torsoright", "torsoup") },
+            { PlayerStateDevelopment.PlayerState.Legs, ("bodyright", "bodyup") }
+        };
 
-        // If you have arms, animate based on direction
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Arms) {
-            if (movement.x == 1) PlayerAnimator.SetBool("armright", true);
-            else if (movement.x == -1) PlayerAnimator.SetBool("armleft", true);
-            else if (movement.y == 1) PlayerAnimator.SetBool("armup", true);
-            else if (movement.y == -1) PlayerAnimator.SetBool("armdown", true);
-            else {
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
-                    if (parameter.name == "armwalk") continue;        
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
-            }
-        }
+        // Get the animation parameter names based on the player state
+        var animParams = stateToAnimParams[psd.currPlayerState];
 
-        // If you have torso, animate based on direction
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Torso) {
-            if (movement.x == 1) PlayerAnimator.SetBool("torsoright", true);
-            else if (movement.x == -1) PlayerAnimator.SetBool("torsoleft", true);
-            else if (movement.y == 1) PlayerAnimator.SetBool("torsoup", true);
-            else if (movement.y == -1) PlayerAnimator.SetBool("torsodown", true);
-            else {
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
-                    if (parameter.name == "armwalk" || parameter.name == "torsoidle") continue;        
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
+        // Set the appropriate animation parameter based on the movement direction
+        if (movement.x == 1) PlayerAnimator.SetBool(animParams.x, true);
+        else if (movement.x == -1) PlayerAnimator.SetBool(animParams.x.Replace("right", "left"), true);
+        else if (movement.y == 1) PlayerAnimator.SetBool(animParams.y, true);
+        else if (movement.y == -1) PlayerAnimator.SetBool(animParams.y.Replace("up", "down"), true);
+        else
+        {
+            // Set all animation parameters to false
+            foreach (AnimatorControllerParameter parameter in PlayerAnimator.parameters)
+            {
+                if (parameter.name == "armwalk" || parameter.name == "torsoidle" || parameter.name == "bodyidle") continue;
+                PlayerAnimator.SetBool(parameter.name, false);
             }
         }
-    
-        // If you have the entire body, animate based on direction
-        if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Legs) {
-            if (movement.x == 1) PlayerAnimator.SetBool("bodyright", true);
-            else if (movement.x == -1) PlayerAnimator.SetBool("bodyleft", true);
-            else if (movement.y == 1) PlayerAnimator.SetBool("bodyup", true);
-            else if (movement.y == -1) PlayerAnimator.SetBool("bodydown", true);
-            else {
-                foreach(AnimatorControllerParameter parameter in PlayerAnimator.parameters) {    
-                    if (parameter.name == "armwalk" || parameter.name == "torsoidle" || parameter.name == "bodyidle") continue;        
-                    PlayerAnimator.SetBool(parameter.name, false);            
-                }
-            }
-        }
-    
     }
 
     void FixedUpdate()
