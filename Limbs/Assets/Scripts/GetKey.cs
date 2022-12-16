@@ -18,7 +18,7 @@ public class GetKey : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             Debug.Log("collided with key");
             Destroy(gameObject);
-            gc.HasKeys += 1;
+            gc.HasKeys = KeyNum;
         }
     }
 }

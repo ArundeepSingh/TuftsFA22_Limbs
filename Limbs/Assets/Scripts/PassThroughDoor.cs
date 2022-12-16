@@ -17,7 +17,7 @@ public class PassThroughDoor : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
-            if (gc.HasKeys == DoorNum) {
+            if (gc.HasKeys >= DoorNum) {
                 gc.PlayerPos = NewPlayerPos;
                 gc.LoadScene(NextScene);
             } else {

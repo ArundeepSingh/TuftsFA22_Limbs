@@ -931,8 +931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 500
+  currentHealth: 500
 --- !u!114 &873681207
 MonoBehaviour:
   m_ObjectHideFlags: 0
