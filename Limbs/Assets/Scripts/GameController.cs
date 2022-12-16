@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public bool BleedingOut;
     public string LastScene;
     public int HasKeys;
+    public float cloud_pos_x; 
 
     void Awake () {
         DontDestroyOnLoad(this.gameObject);
@@ -132,25 +133,18 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
-                // REAL POS
-                //gc.PlayerPos = new Vector3(20f, -14f, 0f);
-                // TESTING POS
-                myPlayer.transform.position = new Vector3(25f, -48f, 0f);
                 break;
             case "TorsoScene":
                 SceneManager.LoadScene("TorsoScene");
                 LadderMovementscript.enabled = false;
                 PlayerMovementscript.enabled = true;
-                myPlayer.transform.position = new Vector3(-15f, -20f, 0f);
                 rb.gravityScale = 0f;
                 break;
             case "LegsScene":
                 BleedingOut = false;
                 SceneManager.LoadScene("LegsScene");
-                myPlayer.transform.position = new Vector3(-13f, -27f, 0f);
                 break;
             case "BossScene":
-                myPlayer.transform.position = new Vector3(0f, -13f, 0f);
                 SceneManager.LoadScene("BossScene");
                 break;
             case "LoseScene":

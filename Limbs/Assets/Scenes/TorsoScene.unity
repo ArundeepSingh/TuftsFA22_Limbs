@@ -466,6 +466,7 @@ MonoBehaviour:
   NoKeyDialogue: {fileID: 1229273556}
   DoorNum: 3
   NextScene: LegsScene
+  NewPlayerPos: {x: -35, y: -27, z: 0}
 --- !u!61 &628558460
 BoxCollider2D:
   m_ObjectHideFlags: 0

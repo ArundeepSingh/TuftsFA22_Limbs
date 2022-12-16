@@ -386,6 +386,7 @@ MonoBehaviour:
   NoKeyDialogue: {fileID: 1770086936}
   DoorNum: 1
   NextScene: ArmsScene
+  NewPlayerPos: {x: 25, y: -48, z: 0}
 --- !u!1 &377452318
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PassThroughDoor : MonoBehaviour
     public GameObject NoKeyDialogue;
     public int DoorNum;
     public string NextScene;
+    public Vector3 NewPlayerPos;
 
     void Start () {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
@@ -16,8 +17,8 @@ public class PassThroughDoor : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D other){
         if (other.CompareTag("Player")) {
-
             if (gc.HasKeys == DoorNum) {
+                gc.PlayerPos = NewPlayerPos;
                 gc.LoadScene(NextScene);
             } else {
                 Debug.Log("Player doesn't have key number " + DoorNum);
