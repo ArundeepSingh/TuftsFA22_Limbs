@@ -13,10 +13,12 @@ public class MeleePlayerAttack : MonoBehaviour {
    public LayerMask enemyLayers;
    public GameObject ShowAttackCircle;
    private SpriteRenderer CircleRenderer;
+   private GameController gc;
    
    void Awake(){
       ShowAttackCircle.SetActive(false);
       CircleRenderer = ShowAttackCircle.GetComponent<SpriteRenderer>();
+      gc = GameObject.FindWithTag("GameController").GetComponent<GameController>();
    }
 
     
@@ -46,6 +48,7 @@ public class MeleePlayerAttack : MonoBehaviour {
     void Attack(){
         //animator.SetTrigger ("Attack");
         Debug.Log("Attacking");
+        gc.PlayerAnimator.SetTrigger("punch");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);     //2D
         //Collider[] hitEnemy = Physics.OverlapSphere(AttackPoint.position, attackRange, enemyLayers);   //3D version
 
