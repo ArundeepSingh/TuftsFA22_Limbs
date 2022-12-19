@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowJumpInst : MonoBehaviour
+public class ShowBleedout : MonoBehaviour
 {
     private GameController gc;
 
@@ -10,6 +10,6 @@ public class ShowJumpInst : MonoBehaviour
     {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         // only show instruciton if they have arms
-        gameObject.SetActive(!gc.ShowArms);
+        gameObject.SetActive(!gc.ShowTorso);
     }
 }
