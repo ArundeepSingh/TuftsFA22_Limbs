@@ -23,22 +23,22 @@ public class UnlockNewPart : MonoBehaviour
 
     private void FixedUpdate() {
         total_time += Time.deltaTime;
-        if (total_time > 6f) {
+        if (total_time > 5f) {
             new_part.SetActive(false);
             old_sprite.SetActive(false);
             new_sprite.SetActive(true);
         }
 
-        if (total_time > 6f && total_time < 6.2f) {
+        if (total_time > 5f && total_time < 5.2f) {
             BigLight.intensity += 10f;
         }
         
-        if (total_time > 6.5f && BigLight.intensity > 1f) {
+        if (total_time > 5.5f && BigLight.intensity > 1f) {
             BigLight.intensity -= 2f;
         }
         
         // 8 SECONDS FOR FINAL PUSH, 1 SECOND FOR TESTING
-        if (total_time > 8f) {
+        if (total_time > 7f) {
             gc.LoadScene(sceneToLoad);
         }
     }

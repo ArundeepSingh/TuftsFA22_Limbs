@@ -12,6 +12,8 @@ public class GetKey : MonoBehaviour
     {
         // get the game controller object
         gc = GameObject.Find("GameController").GetComponent<GameController>();
+        // only show key if they don't have it
+        gameObject.SetActive(gc.HasKeys < KeyNum);
     }
 
     public void OnTriggerEnter2D (Collider2D other) {
