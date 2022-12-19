@@ -184,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 625328769
   m_SortingLayer: 2
-  m_SortingOrder: 11
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5490717954918bc428f707c56fcba451, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -526,10 +526,10 @@ MonoBehaviour:
   attackPoint: {fileID: 7557721579835482443}
   attackRange: 0.5
   attackRate: 2
-  attackDamage: 40
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  ShowAttackCircle: {fileID: 0}
 --- !u!1 &7905510353552163070
 GameObject:
   m_ObjectHideFlags: 0
