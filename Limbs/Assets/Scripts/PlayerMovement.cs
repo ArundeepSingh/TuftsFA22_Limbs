@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D bc;
 
     // Eyes Sprites
     public Sprite LeftEyesSprite;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PlayerAnimator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider2D>();
         PlayerAnimator.enabled = false;
         psd = PlayerStateDevelopment.GetInstance();
     }
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
             playerLight.pointLightInnerRadius += 10;
         } else if (other.gameObject.tag == "Arms") {
             Debug.Log("Progressing player state from arms");
+            bc.size = new Vector2(bc.size.x, bc.size.y + 0.6f);
             psd.ProgressPlayerState();
         } else if (other.gameObject.tag == "Torso") {
             Debug.Log("Progressing to Torso");
