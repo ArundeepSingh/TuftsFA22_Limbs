@@ -43470,6 +43470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyNum: 3
+  keyPickupAudioClip: {fileID: 8300000, guid: 98411ede456454000bba0ab8eb424411, type: 3}
 --- !u!61 &2054621720
 BoxCollider2D:
   m_ObjectHideFlags: 0
