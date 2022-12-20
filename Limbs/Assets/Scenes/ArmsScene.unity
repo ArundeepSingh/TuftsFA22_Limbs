@@ -5099,13 +5099,17 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4419881113655512783, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4419881115134416946, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4419881115198216639, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4419881115240181654, guid: 48db83da79a3a42a4b00c540cb4026f2, type: 3}
       propertyPath: m_Pivot.x
