@@ -6,6 +6,7 @@ public class GetKey : MonoBehaviour
 {
     private GameController gc;
     public int KeyNum;
+    public AudioClip keyPickupAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,9 @@ public class GetKey : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player"){
             Debug.Log("collided with key");
+
+            AudioSource.PlayClipAtPoint(keyPickupAudioClip, this.gameObject.transform.position);
+
             Destroy(gameObject);
             gc.HasKeys = KeyNum;
         }

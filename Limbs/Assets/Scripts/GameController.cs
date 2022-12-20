@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public GameObject myPlayer;
+    private AudioSource audioSource;
+    public AudioClip sceneChangeAudio;
+    public AudioClip doorOpenAudio;
     private MonoBehaviour PlayerMovementscript;
     private MonoBehaviour LadderMovementscript;
     private MonoBehaviour PlayerAttackScript;
@@ -39,6 +42,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         PlayerMovementscript = myPlayer.GetComponent("PlayerMovement") as MonoBehaviour;
         LadderMovementscript = myPlayer.GetComponent("LadderMovement") as MonoBehaviour;
         CameraFollowscript = Camera.main.GetComponent("CameraFollow2DLERP") as MonoBehaviour;
@@ -78,6 +82,7 @@ public class GameController : MonoBehaviour
         myPlayer.gameObject.SetActive(false);
         Debug.Log("my player is active?");
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        audioSource.PlayOneShot(sceneChangeAudio);
         CameraFollowscript.enabled = false;
         ShowEyes = false;
         ShowDoor1 = true;
@@ -89,6 +94,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("UnlockAnimationArms");
         myPlayer.gameObject.SetActive(false);
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        audioSource.PlayOneShot(sceneChangeAudio);
         CameraFollowscript.enabled = false;
         ShowArms = false;
         CanClimb = true;
@@ -100,6 +106,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("UnlockAnimationTorso");
         myPlayer.gameObject.SetActive(false);
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        audioSource.PlayOneShot(sceneChangeAudio);
         CameraFollowscript.enabled = false;
         ShowTorso = false;
         PlayerAttackScript.enabled = true;
@@ -112,6 +119,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("UnlockAnimationLegs");
         myPlayer.gameObject.SetActive(false);
         Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        audioSource.PlayOneShot(sceneChangeAudio);
         CameraFollowscript.enabled = false;
         ShowLegs = false;
         // PlayerAnimator.SetBool("armwalk", true);
@@ -130,11 +138,13 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene("StartScene");
                 break;
             case "ArmsScene":
+                audioSource.PlayOneShot(doorOpenAudio);
                 SceneManager.LoadScene("ArmsScene");
                 LadderMovementscript.enabled = true;
                 PlayerMovementscript.enabled = false;
                 break;
             case "TorsoScene":
+                audioSource.PlayOneShot(doorOpenAudio);
                 SceneManager.LoadScene("TorsoScene");
                 LadderMovementscript.enabled = false;
                 PlayerMovementscript.enabled = true;
