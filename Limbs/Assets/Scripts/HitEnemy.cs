@@ -5,7 +5,10 @@ using UnityEngine;
 public class HitEnemy : MonoBehaviour
 {
     public GameObject Camera;
-    public AudioSource[] Sounds;
+
+    private AudioSource audioSource;
+    public AudioClip[] PlayerHurtAudioClips;
+
     private GameController gc;
     public bool GotHit;
     private PlayerStateDevelopment psd;
@@ -14,14 +17,15 @@ public class HitEnemy : MonoBehaviour
     void Start() {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         psd = PlayerStateDevelopment.GetInstance();
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
-            Sounds[Random.Range(0, Sounds.Length)].Play();
             GotHit = true;
             if (psd.currPlayerState == PlayerStateDevelopment.PlayerState.Eyes) GotHit = false;
-            yield return StartCoroutine(Camera.GetComponent<CameraShake>().Shake(1.0f, 0.25f));
+                audioSource.PlayOneShot(PlayerHurtAudioClips[Random.Range(0, PlayerHurtAudioClips.Length)]);
+                yield return StartCoroutine(Camera.GetComponent<CameraShake>().Shake(1.0f, 0.25f));
         }
     }
     
