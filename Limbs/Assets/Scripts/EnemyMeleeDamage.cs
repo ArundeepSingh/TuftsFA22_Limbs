@@ -8,22 +8,36 @@ public class EnemyMeleeDamage : MonoBehaviour {
     //    public GameObject healthLoot;
        public float maxHealth = 100;
        public float currentHealth;
+       private GameObject player;
+       private Rigidbody2D rb2D;
+       public float knockBackForce = 5f;
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
               anim = GetComponentInChildren<Animator> ();
               currentHealth = maxHealth;
+              player = GameObject.FindWithTag("Player");
+              rb2D = GetComponent<Rigidbody2D>();
        }
 
        public void TakeDamage(int damage){
+              Debug.Log("knockback force is " + knockBackForce);
               Debug.Log("enemy is taking damage");
               currentHealth -= damage;
-              //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 1f);
-              //StartCoroutine(ResetColor());
-              //anim.SetTrigger ("Hurt");
+              Rigidbody2D pushRB = player.gameObject.GetComponent<Rigidbody2D>();
+              Vector2 moveDirectionPush = rb2D.transform.position - player.transform.position;
+              rb2D.AddForce(moveDirectionPush.normalized * knockBackForce, ForceMode2D.Impulse);
+              StartCoroutine(EndKnockBack(pushRB));
               if (currentHealth <= 0){
                      Die();
               }
+       }
+
+
+       IEnumerator EndKnockBack(Rigidbody2D otherRB){
+              Debug.Log("ending knockback");
+              yield return new WaitForSeconds(0.2f);
+              otherRB.velocity= new Vector3(0,0,0);
        }
 
        void Die(){
