@@ -75,6 +75,14 @@ public class GameController : MonoBehaviour
         LoadScene("StartScene");
     }
 
+    public void CreditsSwitch() {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
+    public void MainMenuReturn() {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void SwitchSceneAfterEyesPickup() {
         PlayerPos = myPlayer.transform.position;
         Debug.Log(PlayerPos);
